@@ -9,5 +9,19 @@ package access;
  * @author MarlonG
  */
 public class Access {
+    protected String event;
+    protected String registryAttendees;
+
+    public Access(String event, String registryAttendees) {
+        this.event = event;
+        this.registryAttendees = registryAttendees;
+    }
+    
+    
+    
+    /*Methods*/
+    public void checkEntry(){}
+    public void registryAttendees(){}
+    public void genStatistics(){}
     
 }
