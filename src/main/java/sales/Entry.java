@@ -5,8 +5,7 @@ package sales;
  * @author MarlonG
  */
 
-public class Entry {
-    private int id = 0;
+public class Entry {    
     private String name;
     private double price;
     
@@ -16,8 +15,7 @@ public class Entry {
         
     }
     
-    public Entry(String name, double price) {
-        this.id = id + 1;
+    public Entry(String name, double price) {        
         this.name = name;
         this.price = price;
     }
