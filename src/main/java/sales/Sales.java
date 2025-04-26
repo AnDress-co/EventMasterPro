@@ -7,20 +7,26 @@ import java.util.ArrayList;
  * @author MarlonG
  */
 
-public class Sales extends Entry{
-    private int idSale = 0;
+public class Sales{
+    private static int idCounter = 1;
+    private int idSale;
     private int quantitySold;
-    private String saleDate;    
-    
-    private static ArrayList<Sales> salesList = new ArrayList<>();
+    private String saleDate;
+    private double valueEntrySold;
+    private final ArrayList<Sales> salesList;
     
     /*Contructor Sales*/
+    
+    public Sales() {
+        this.salesList = new ArrayList<>();
+    }
 
-    public Sales(int quantitySold, String saleDate, TypeEntry typeEntry) {
-        super(typeEntry);
-        this.idSale += 1;
+    public Sales(int quantitySold, String saleDate, double valueEntrySold) {
+        this.idSale = idCounter++;
         this.quantitySold = quantitySold;
         this.saleDate = saleDate;
+        this.valueEntrySold = valueEntrySold;
+        this.salesList = new ArrayList<>();
     }
     
     /*Getters and Setters Sales*/
@@ -49,11 +55,37 @@ public class Sales extends Entry{
         this.saleDate = saleDate;
     }
     
+    public double getValueEntrySold() {
+        return valueEntrySold;
+    }
+
+    public void setEntrySale(double valueEntrySold) {
+        this.valueEntrySold = valueEntrySold;
+    }        
+    
+    public ArrayList<Sales> getSalesList() {
+        return salesList;
+    }
+    
     /*Methods Sales*/
     
-    public void registerSale(int quantitySold, String saleDate, TypeEntry typeEntry) {
-        Sales newSale = new Sales(quantitySold, saleDate, typeEntry);
+    public void registerSale() {
+        Sales newSale = new Sales(this.quantitySold, this.saleDate, this.valueEntrySold);
         salesList.add(newSale);
         System.out.println("Registered sale.");
+    }
+    
+    public void salesList() {
+        if (salesList.isEmpty()) {
+            System.out.println("No sales have been redistered yet.");
+        } else {
+            System.out.println("List of Registered sales: ");
+            for (Sales sale: salesList) {
+                System.out.println("ID: " + sale.getIdSale() + 
+                        "\nQuantity: " + sale.getQuantitySold() + 
+                        "\nSale date: " + sale.getSaleDate() + 
+                        "\nPurchase value: " + (sale.getValueEntrySold()*sale.getQuantitySold())); 
+            }
+        }
     }
 }

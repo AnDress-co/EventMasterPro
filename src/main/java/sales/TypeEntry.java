@@ -1,22 +1,28 @@
 package sales;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
  * @author MarlonG
  */
 
-public class TypeEntry {
-    private HashMap<String, Double> typeEntry;    
+public class TypeEntry extends Entry{    
+    private HashMap<String, Double> typeEntry;
     
     /*Contructor TypeEntry*/
 
-    public TypeEntry(HashMap<String, Double> typeEntry) {
-        this.typeEntry = typeEntry;
+    public TypeEntry() {
+        this.typeEntry = new HashMap<>();
+    }        
+
+    public TypeEntry(String name, double price) {
+        super(name, price);
+        this.typeEntry = new HashMap<>();
     }
             
-    /*Getters and Setters TypeEntry*/
+    /*Getters and Setters TypeEntry*/          
 
     public HashMap<String, Double> getTypeEntry() {
         return typeEntry;
@@ -24,24 +30,27 @@ public class TypeEntry {
 
     public void setTypeEntry(HashMap<String, Double> typeEntry) {
         this.typeEntry = typeEntry;
-    }        
+    }           
     
     /*Methods TypeEntry*/
     
-    public void addEntryType(String name, double price) {
-        if(!typeEntry.containsKey(name)) {
-            typeEntry.put(name, price);
-            System.out.println("Entry type " + name + " added successfully.");
+    public void addEntryType() {        
+        if (typeEntry.containsKey(this.getName())) {
+            System.out.println("The entry type '" + this.getName() + "' already exists. Updating price...");
         } else {
-            System.out.println("This type entry already exists.");
+            System.out.println("Adding entry type '" + this.getName() + "' with price " + this.getPrice() + ".");
         }
+        typeEntry.put(this.getName(), this.getPrice());
     }
     
     public void entrysList() {
-        if(typeEntry.isEmpty()) {
+        if (typeEntry.isEmpty()) {
             System.out.println("There are no entry types registered.");
         } else {
-            typeEntry.forEach((name, price) -> System.out.println("Type: " + name + "|| Price: " + price));
-        }
+            System.out.println("Registered entry types:");            
+            for (Map.Entry<String, Double> entry : typeEntry.entrySet()) {
+                System.out.println("Name: " + entry.getKey() + " || " + "Price: " + entry.getValue());
+            }
+        }                
     }
 }

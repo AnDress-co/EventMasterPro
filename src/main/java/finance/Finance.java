@@ -16,15 +16,15 @@ public class Finance {
     private static ArrayList<Double> listExpenses = new ArrayList<>();
     
     /*Contructor Finance*/
-
-    public Finance(double eventBudget, double income, double expenses) {
-        this.eventBudget = eventBudget;
-        this.income = income;
-        this.expenses = expenses;
+    
+    public Finance() {
+        
     }
     
-    public Finance(double income) {        
-        this.income = income;        
+    public Finance(double income, double expenses, double eventBudget) {
+        this.income = income;
+        this.expenses = expenses;
+        this.eventBudget = eventBudget;
     }
     
     /*Getters and Setters Finance*/
@@ -53,11 +53,7 @@ public class Finance {
         this.expenses = expenses;
     }
     
-    /*Methods Finance*/
-    
-    public double calculateProfit() {
-        return income - expenses;
-    }
+    /*Methods Finance*/               
     
     public void incomeHistory() {
         if(listIncome.isEmpty()) {
@@ -69,8 +65,8 @@ public class Finance {
         }
     }
     
-    public void registerIncome(double income) {        
-        listIncome.add(income);
+    public void registerIncome() {
+        listIncome.add(this.income);
         System.out.println("Registered income.");
     }
     
@@ -84,8 +80,8 @@ public class Finance {
         }
     }
     
-    public void registerExpenses(double expenses) {        
-        listExpenses.add(income);
+    public void registerExpenses() {        
+        listExpenses.add(this.expenses);
         System.out.println("Registered expenses.");
     }
 }

@@ -1,0 +1,13 @@
+access\Attendees.class
+artist\Artist.class
+inCommon\Management.class
+sales\Entry.class
+event\Event.class
+access\Access.class
+event\EventManager.class
+location\Location.class
+location\LocationManager.class
+sales\TypeEntry.class
+finance\Finance.class
+com\mycompany\eventmasterpro\Main.class
+sales\Sales.class

@@ -6,33 +6,38 @@ package sales;
  */
 
 public class Entry {
-    private int idEntry = 0;
-    private TypeEntry typeEntry;
+    private int id = 0;
+    private String name;
+    private double price;
     
     /*Contructor Entry*/
     
-    public Entry(TypeEntry typeEntry) {
-        this.idEntry += 1;
-        this.typeEntry = typeEntry;
+    public Entry() {
+        
     }
     
+    public Entry(String name, double price) {
+        this.id = id + 1;
+        this.name = name;
+        this.price = price;
+    }
+       
     /*Getters and Setters Entry*/
-    
-    public int getIdEntry() {
-        return idEntry;
+
+    public String getName() {
+        return name;
     }
 
-    public void setIdEntry(int idEntry) {
-        this.idEntry = idEntry;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public TypeEntry getTypeEntry() {
-        return typeEntry;
+    public double getPrice() {
+        return price;
     }
 
-    public void setTypeEntry(TypeEntry typeEntry) {
-        this.typeEntry = typeEntry;
-    }          
-    
-    /*Methods Entry*/
+    public void setPrice(double price) {
+        this.price = price;
+    }
+        
 }
