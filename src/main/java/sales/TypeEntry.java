@@ -24,7 +24,7 @@ public class TypeEntry extends Entry{
             
     /*Getters and Setters TypeEntry*/          
 
-    public HashMap<String, Double> getTypeEntry() {
+    public HashMap<String, Double> getTypeEntry() {        
         return typeEntry;
     }
 

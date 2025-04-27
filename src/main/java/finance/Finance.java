@@ -59,6 +59,7 @@ public class Finance {
         if(listIncome.isEmpty()) {
             System.out.println("Empty income list.");
         } else {
+            System.out.println("Income list: ");
             for (double oneIncome : listIncome) {
                 System.out.println(oneIncome);
             }
@@ -74,6 +75,7 @@ public class Finance {
         if(listExpenses.isEmpty()) {
             System.out.println("Empty expenses list.");
         } else {
+            System.out.println("Expenses list: ");
             for (double oneExpenses : listExpenses) {
                 System.out.println(oneExpenses);
             }
