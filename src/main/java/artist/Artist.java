@@ -9,11 +9,11 @@ package artist;
  * @author MarlonG
  */
 public class Artist {
-    protected int id;
-    protected String name;
-    protected String description;
-    protected String contact;
-    protected String history;
+    private int id;
+    private String name;
+    private String description;
+    private String contact;
+    private String history;
 
     public Artist(int id, String name, String description, String contact, String history) {
         this.id = id;
@@ -23,6 +23,7 @@ public class Artist {
         this.history = history;
     }
 
+    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -62,18 +63,25 @@ public class Artist {
     public void setHistory(String history) {
         this.history = history;
     }
-    
-    public void registry(){
-        System.out.println("Beggining Registry");
-    
+
+    // Methods
+    public void register() {
+        System.out.println("Registering artist: " + this.name);
     }
-    public void assingEvent(){
-        System.out.println("Assignnng Event");
-    };
-    
-    public void listHistory(){
-        System.out.println("Searching for the artist's history of events ");
-    };
-    
-    
+
+    public void assignEvent() {
+        System.out.println("Assigning event to artist: " + this.name);
+    }
+
+    public void listHistory() {
+        System.out.println("History of " + this.name + ": " + this.history);
+    }
+
+    public void showInfo() {
+        System.out.println("Artist ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Description: " + description);
+        System.out.println("Contact: " + contact);
+        System.out.println("History: " + history);
+    }
 }

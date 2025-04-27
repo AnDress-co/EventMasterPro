@@ -12,17 +12,11 @@ public class Attendees {
     protected int id;
     protected String name;
     protected String contact;
-    protected String type;
-    protected String technical;
-    protected String participationHistory;
 
-    public Attendees(int id, String name, String contact, String type, String technical, String participationHistory) {
+    public Attendees(int id, String name, String contact) {
         this.id = id;
         this.name = name;
         this.contact = contact;
-        this.type = type;
-        this.technical = technical;
-        this.participationHistory = participationHistory;
     }
     
     /**/
@@ -55,40 +49,19 @@ public class Attendees {
     public void setContact(String contact) {
         this.contact = contact;
     }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getTechnical() {
-        return technical;
-    }
-
-    public void setTechnical(String technical) {
-        this.technical = technical;
-    }
-
-    public String getParticipationHistory() {
-        return participationHistory;
-    }
-
-    public void setParticipationHistory(String participationHistory) {
-        this.participationHistory = participationHistory;
-    }
     
     /*Methods*/
-    public void registry(){
-        System.out.println("Registry");
+    public void registry() {
+        System.out.println("Registering attendee: " + this.name);
     }
-    public void update(){
-        System.out.println("Updating");
+
+    public void update(String newContact) {
+        this.contact = newContact;
+        System.out.println("Attendee updated: " + this.name);
     }
-    public void addRequeriment(){};
-    public void addParticipationHistory(){}
-    public void listHistory(){}
+
+    public void showInfo() {
+        System.out.println("ID: " + id + " | Name: " + name + " | Contact: " + contact);
+    }
     
 }

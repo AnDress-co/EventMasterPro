@@ -16,12 +16,16 @@ public class Access {
         this.event = event;
         this.registryAttendees = registryAttendees;
     }
-    
-    
-    
-    /*Methods*/
-    public void checkEntry(){}
-    public void registryAttendees(){}
-    public void genStatistics(){}
-    
+
+    public void checkEntry(int attendeeId) {
+        System.out.println("Checking entry for attendee ID: " + attendeeId + " at event: " + event);
+    }
+
+    public void registryAttendees() {
+        System.out.println("Registering attendee to event: " + event);
+    }
+
+    public void genStatistics(int totalAttendees) {
+        System.out.println("Total attendees registered: " + totalAttendees);
+    }
 }
