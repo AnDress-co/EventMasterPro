@@ -440,10 +440,24 @@ public class Main {
                                 typeEntry.entrysList();
                                 break;
                             case 3:
-                                System.out.println("1.Validate entry");
-                                System.out.println("2.Register attendee");
-                                System.out.println("3.Attendance statistics");
-                                System.out.println("Select option: ");
+                                scanner.nextLine();
+                                System.out.println("Select the entry type: ");
+                                typeEntry.entrysList();
+                                System.out.print("Enter the name of the entry you want: ");
+                                String entryName = scanner.nextLine().toLowerCase();                                
+                                if(typeEntry.getTypeEntry().containsKey(entryName)) {
+                                   sale.setEntrySale(typeEntry.getTypeEntry().get(entryName));
+                                   System.out.print("Enter quantity sold: ");
+                                    int quantity = scanner.nextInt();
+                                    scanner.nextLine();
+                                    sale.setQuantitySold(quantity);                                    
+                                    System.out.print("Enter sale date (DD-MM-YYYY): ");
+                                    String saleDate = scanner.nextLine();
+                                    sale.setSaleDate(saleDate);
+                                    sale.registerSale();
+                                } else {
+                                    System.out.println("ERROR: The entry name you entered does not exist.");
+                                }                                
                                 break;
                             case 4:
                                 sale.salesList();
