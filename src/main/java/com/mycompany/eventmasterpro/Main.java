@@ -6,7 +6,6 @@ import finance.Finance;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import location.Location;
@@ -549,7 +548,7 @@ public class Main {
                                 finance.incomeHistory();
                                 break;
                             case 5:
-                                System.out.print("Enter income: ");
+                                System.out.print("Enter expenses: ");
                                 double expenses = scanner.nextDouble();
                                 finance.setExpenses(expenses);
                                 finance.registerExpenses();
