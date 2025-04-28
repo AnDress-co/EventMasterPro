@@ -17,11 +17,6 @@ public class LocationManager {
     public LocationManager(List<Location> locations) {
         this.locations = locations;
     }
-
-    public void addLocation(Location location) {
-        this.locations.add(location);
-        System.out.println("The location " + location.getName() + " was added successfully!");
-    }
     
     public List<Location> getAvailableLocationsByDate(LocalDate date){
         List<Location> availableLocations = new ArrayList<>();
@@ -33,5 +28,25 @@ public class LocationManager {
         return availableLocations;
     }
     
-    /*public Location searchLocationByName(String name) {}*/
+    public Location getLocationById(int id){
+        for (Location loc : this.locations) {
+            if (loc.getId() == id) {
+                return loc;
+            }
+        }
+        return null;
+    }
+    
+    public void deleteAvailableDate(LocalDate date, Location location) { 
+        for (LocalDate d: location.getAvailableDates()){
+            if (d.equals(date)) {
+                location.getAvailableDates().remove(d); 
+                System.out.println("The date " + date + " was removed from available dates for the " + location.getName() + " location.");
+            }
+        }      
+    }
+    
+    public List<Location> getLocations() {
+        return locations;
+    }
 }

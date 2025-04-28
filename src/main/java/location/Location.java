@@ -1,18 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package location;
 
 import java.time.*;
-//import java.util.ArrayList;
 import java.util.HashSet;
-//import java.util.List;
 
-/**
- *
- * @author MarlonG
- */
 public class Location {
     private int idLocation;
     private String name;
@@ -35,11 +25,6 @@ public class Location {
     public void addAvailableDate(LocalDate date) {
         this.availableDates.add(date);
         System.out.println("The date " + date + " was added successfully!");
-    }
-    
-    public void deleteAvailableDate(LocalDate date) { 
-        this.availableDates.remove(date);
-        System.out.println("The date " + date + " was removed!");
     }
     
     public void validateAvailableDate(LocalDate date) { 
