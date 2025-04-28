@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\Estudios\Construccion Software I\Proyecto\EventMasterPro\src\main\java\access\Access.java
 D:\Estudios\Construccion Software I\Proyecto\EventMasterPro\src\main\java\access\Attendees.java
 D:\Estudios\Construccion Software I\Proyecto\EventMasterPro\src\main\java\artist\Artist.java
@@ -10,3 +11,17 @@ D:\Estudios\Construccion Software I\Proyecto\EventMasterPro\src\main\java\locati
 D:\Estudios\Construccion Software I\Proyecto\EventMasterPro\src\main\java\sales\Entry.java
 D:\Estudios\Construccion Software I\Proyecto\EventMasterPro\src\main\java\sales\Sales.java
 D:\Estudios\Construccion Software I\Proyecto\EventMasterPro\src\main\java\sales\TypeEntry.java
+=======
+C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\access\Access.java
+C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\access\Attendees.java
+C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\artist\Artist.java
+C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\com\mycompany\eventmasterpro\Main.java
+C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\event\Event.java
+C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\event\EventManager.java
+C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\finance\Finance.java
+C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\location\Location.java
+C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\location\LocationManager.java
+C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\sales\Entry.java
+C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\sales\Sales.java
+C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\sales\TypeEntry.java
+>>>>>>> devEventandLocation

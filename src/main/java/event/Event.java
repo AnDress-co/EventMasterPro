@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package event;
 
 import java.time.*;
 import location.Location;
 
-/**
- *
- * @author MarlonG
- */
 public class Event {
     private int idEvent;
     private String name;
@@ -65,7 +57,7 @@ public class Event {
 
     public void assignDate (LocalDateTime date) {
         this.date = date;
-        //System.out.println("The date " + date + " was added to the " + this.name + " event!");
+        System.out.println("The date " + date + " was added to the " + this.name + " event!");
     }
 
     public Location getLocation() {
@@ -74,7 +66,6 @@ public class Event {
 
     public void assignLocation(Location location) {
         this.location = location;
-        //System.out.println("The location " + location.getName() + " was added to the " + this.name + " event!");
     }
 
     public String getDescription() {
