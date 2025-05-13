@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import artist.Artist;
 import access.Attendees;
 import access.Access;
+import artist.TypeArtist;
 
 /**
  *
@@ -359,10 +360,7 @@ public class Main {
                         artistOption = scanner.nextInt();
                         scanner.nextLine(); // Consume newline
                         switch (artistOption) {
-                            case 1:
-                                System.out.print("Enter artist ID: ");
-                                int id = scanner.nextInt();
-                                scanner.nextLine();
+                            case 1:                                
                                 System.out.print("Enter artist name: ");
                                 String name = scanner.nextLine();
                                 System.out.print("Enter artist description: ");
@@ -370,20 +368,35 @@ public class Main {
                                 System.out.print("Enter artist contact info: ");
                                 String contact = scanner.nextLine();
                                 System.out.print("Enter artist history: ");
+                                events = eventManager.getEvents();
+                                if (events.isEmpty()) {
+                                    System.out.println("No events found");
+                                } else {
+                                    for (Event e : events) {
+                                        String locationName;
+                                        if(e.getLocation() == null){ locationName = "Empty"; } else { locationName = e.getLocation().getName(); }
+                                        System.out.println("Event ID: " + e.getIdEvent()+"\n"
+                                                + "Name: " + e.getName() +"\n"
+                                                + "Category: " + e.getEventType()+"\n"
+                                                + "Date: " + e.getDate()+"\n"
+                                                + "Location: " + locationName +"\n"
+                                                + "Description: " + e.getDescription()+"\n"
+                                                + "---------------------------");
+                                    } 
+                                }
+                                System.out.println("escriba uno de los eventos: ");
                                 String history = scanner.nextLine();
-                                Artist newArtist = new Artist(id, name, description, contact, history);
+                                TypeArtist typeArtist = new TypeArtist();
+                                typeArtist.categoeyList();
+                                System.out.println("Ingrese un tipo de artista");
+                                String categoryArtist = scanner.nextLine();
+                                Artist newArtist = new Artist(name, description, contact, history, categoryArtist);
                                 artists.add(newArtist);
                                 newArtist.register();
+                                newArtist.artistList();
                                 break;
-                            case 2:
-                                if (artists.isEmpty()) {
-                                    System.out.println("No artists registered yet.");
-                                } else {
-                                    for (Artist a : artists) {
-                                        System.out.println("------------------------------");
-                                        a.showInfo();
-                                    }
-                                }
+                            case 2:                                
+                                //
                                 break;
                             case 3:
                                 if (artists.isEmpty()) {
@@ -394,7 +407,7 @@ public class Main {
                                     boolean found = false;
                                     for (Artist a : artists) {
                                         if (a.getId() == searchId) {
-                                            a.listHistory();
+                                            a.artistList();
                                             found = true;
                                             break;
                                         }

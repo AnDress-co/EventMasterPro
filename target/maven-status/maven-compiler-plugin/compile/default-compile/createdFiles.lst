@@ -1,12 +1,14 @@
 access\Attendees.class
-sales\TypeEntry.class
+assistant\Assistant.class
 artist\Artist.class
 sales\Entry.class
-finance\Finance.class
-com\mycompany\eventmasterpro\Main.class
 event\Event.class
 access\Access.class
 event\EventManager.class
 location\Location.class
 location\LocationManager.class
+artist\TypeArtist.class
+sales\TypeEntry.class
+finance\Finance.class
+com\mycompany\eventmasterpro\Main.class
 sales\Sales.class
