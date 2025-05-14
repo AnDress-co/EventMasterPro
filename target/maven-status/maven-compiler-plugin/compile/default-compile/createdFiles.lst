@@ -1,6 +1,6 @@
 access\Attendees.class
-assistant\Assistant.class
 artist\Artist.class
+GUI\MainFrame$1.class
 sales\Entry.class
 event\Event.class
 access\Access.class
@@ -8,6 +8,7 @@ event\EventManager.class
 location\Location.class
 location\LocationManager.class
 artist\TypeArtist.class
+GUI\MainFrame.class
 sales\TypeEntry.class
 finance\Finance.class
 com\mycompany\eventmasterpro\Main.class
