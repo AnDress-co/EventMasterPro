@@ -3,15 +3,12 @@ package sales;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- *
- * @author MarlonG
- */
+
 
 public class TypeEntry extends Entry{    
     private HashMap<String, Double> typeEntry;
     
-    /*Contructor TypeEntry*/
+    /*Contructor*/
 
     public TypeEntry() {
         this.typeEntry = new HashMap<>();
@@ -22,7 +19,7 @@ public class TypeEntry extends Entry{
         this.typeEntry = new HashMap<>();
     }
             
-    /*Getters and Setters TypeEntry*/          
+    /*Getters and Setters*/          
 
     public HashMap<String, Double> getTypeEntry() {        
         return typeEntry;
@@ -32,7 +29,7 @@ public class TypeEntry extends Entry{
         this.typeEntry = typeEntry;
     }           
     
-    /*Methods TypeEntry*/
+    /*Methods*/
     
     public void addEntryType() {        
         if (typeEntry.containsKey(this.getName())) {

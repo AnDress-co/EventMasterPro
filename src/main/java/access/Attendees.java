@@ -1,30 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package access;
 
-/**
- *
- * @author Yermy
- */
-public class Attendees {
-    protected int id;
-    protected String name;
-    protected String contact;
+import java.util.ArrayList;
 
-    public Attendees(int id, String name, String contact) {
-        this.id = id;
+public class Attendees {
+    private static int idCounter = 1;
+    private int id;
+    private String name;
+    private String contact;
+    private ArrayList<Attendees> listAttendees;
+    
+    /*Contructor*/
+    
+    public Attendees(String name, String contact) {
+        this.id = idCounter++;
         this.name = name;
         this.contact = contact;
+        this.listAttendees =  new ArrayList<>();
     }
-    
-    /**/
-
-    /**
-     * /
-     * @return
-     */
+       
+    /*Getters and Setters*/
 
     public int getId() {
         return id;
@@ -49,8 +43,17 @@ public class Attendees {
     public void setContact(String contact) {
         this.contact = contact;
     }
+
+    public ArrayList<Attendees> getListAttendees() {
+        return listAttendees;
+    }
+
+    public void setListAttendees(ArrayList<Attendees> listAttendees) {
+        this.listAttendees = listAttendees;
+    }        
     
     /*Methods*/
+    
     public void registry() {
         System.out.println("Registering attendee: " + this.name);
     }

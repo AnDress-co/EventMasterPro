@@ -2,10 +2,8 @@ package artist;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author MarlonG
- */
+
+
 public class Artist{
     private static int idCounter = 1;
     private int id;
@@ -16,6 +14,8 @@ public class Artist{
     private String typeArtist;
     private ArrayList<Artist> lisArtists;
     private ArrayList<String> history;        
+    
+    /*Contructor*/
     
     public Artist() {
         
@@ -32,7 +32,8 @@ public class Artist{
         this.history = new ArrayList<>();
     }        
 
-    // Getters and Setters
+    /*Getters and Setters*/
+    
     public int getId() {
         return id;
     }
@@ -77,7 +78,8 @@ public class Artist{
         return history;
     }        
 
-    // Methods
+    /*Methods*/
+    
     public void register() {
         Artist newArtist = new Artist(this.name, this.description, this.contact, this.itemHistory, this.typeArtist);
         history.add(itemHistory);

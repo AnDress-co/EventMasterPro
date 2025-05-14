@@ -2,10 +2,7 @@ package finance;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author MarlonG
- */
+
 
 public class Finance {
     private double eventBudget;
@@ -15,7 +12,7 @@ public class Finance {
     private static ArrayList<Double> listIncome = new ArrayList<>();
     private static ArrayList<Double> listExpenses = new ArrayList<>();
     
-    /*Contructor Finance*/
+    /*Contructor*/
     
     public Finance() {
         
@@ -27,7 +24,7 @@ public class Finance {
         this.eventBudget = eventBudget;
     }
     
-    /*Getters and Setters Finance*/
+    /*Getters and Setters*/
 
     public double getEventBudget() {
         return eventBudget;
@@ -53,7 +50,7 @@ public class Finance {
         this.expenses = expenses;
     }
     
-    /*Methods Finance*/               
+    /*Methods*/               
     
     public void incomeHistory() {
         if(listIncome.isEmpty()) {

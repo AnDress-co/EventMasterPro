@@ -497,15 +497,12 @@ public class Main {
                         scanner.nextLine(); // Consumir salto de línea
 
                         switch (accessOption) {
-                            case 1:
-                                System.out.print("Enter attendee ID: ");
-                                int attendeeId = scanner.nextInt();
-                                scanner.nextLine();
+                            case 1:                                
                                 System.out.print("Enter attendee name: ");
                                 String attendeeName = scanner.nextLine();
                                 System.out.print("Enter attendee contact: ");
                                 String attendeeContact = scanner.nextLine();
-                                Attendees newAttendee = new Attendees(attendeeId, attendeeName, attendeeContact);
+                                Attendees newAttendee = new Attendees(attendeeName, attendeeContact);
                                 attendeesList.add(newAttendee);
                                 newAttendee.registry();
                                 break;

@@ -8,7 +8,9 @@ import java.util.ArrayList;
  */
 public class TypeArtist {
     private ArrayList<String> artistsCategory;        
-
+    
+    /*Contructor*/
+    
     public TypeArtist() {
         this.artistsCategory = new ArrayList<>();
         this.artistsCategory.add("Singer");
@@ -16,6 +18,8 @@ public class TypeArtist {
         this.artistsCategory.add("Podcaster");
     }
 
+    /*Getters and Setters*/
+    
     public ArrayList<String> getArtistsCategory() {
         return artistsCategory;
     }
@@ -23,6 +27,8 @@ public class TypeArtist {
     public void setArtistsCategory(ArrayList<String> artistsCategory) {
         this.artistsCategory = artistsCategory;
     }
+    
+    /*Methods*/
     
     public void registerCategory(String newCategory) {
         artistsCategory.add(newCategory);

@@ -1,11 +1,8 @@
 package sales;
 
+import access.Attendees;
 import java.util.ArrayList;
 
-/**
- *
- * @author MarlonG
- */
 
 public class Sales{
     private static int idCounter = 1;
@@ -14,8 +11,9 @@ public class Sales{
     private String saleDate;
     private double valueEntrySold;
     private final ArrayList<Sales> salesList;
+    private ArrayList<Attendees> attendeAssociated;    
     
-    /*Contructor Sales*/
+    /*Contructor*/
     
     public Sales() {
         this.salesList = new ArrayList<>();
@@ -27,9 +25,10 @@ public class Sales{
         this.saleDate = saleDate;
         this.valueEntrySold = valueEntrySold;
         this.salesList = new ArrayList<>();
+        this.attendeAssociated = new ArrayList<>();
     }
     
-    /*Getters and Setters Sales*/
+    /*Getters and Setters*/
 
     public int getIdSale() {
         return idSale;
@@ -67,7 +66,15 @@ public class Sales{
         return salesList;
     }
     
-    /*Methods Sales*/
+    public ArrayList<Attendees> getAttendeAssociated() {
+        return attendeAssociated;
+    }
+
+    public void setAttendeAssociated(ArrayList<Attendees> attendeAssociated) {
+        this.attendeAssociated = attendeAssociated;
+    }
+    
+    /*Methods*/
     
     public void registerSale() {
         Sales newSale = new Sales(this.quantitySold, this.saleDate, this.valueEntrySold);
