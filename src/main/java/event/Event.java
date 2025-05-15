@@ -2,31 +2,33 @@ package event;
 
 import java.time.*;
 import location.Location;
+import artist.Artist;
 
-public class Event {
-    private int idEvent;
+public abstract class Event {
+    private int idEvent = 0;
     private String name;
-    private String eventType;
     private LocalDateTime date;
     private Location location;
     private String description;
-
-    public Event(int idEvent, String name, String eventType, LocalDateTime date, Location location, String description) {
-        this.idEvent = idEvent;
+    private Artist artist;
+    
+    /*Constructors*/
+    public Event(String name, LocalDateTime date, Location location, String description, Artist artist) {
+        this.idEvent += 1;
         this.name = name;
-        this.eventType = eventType;
         this.date = date;
         this.location = location;
         this.description = description;
+        this.artist = artist;
     }
     
-    public Event(int idEvent, String name, String eventType, String description) {
-        this.idEvent = idEvent;
+    public Event(String name, String eventType, String description) {
+        this.idEvent += 1;
         this.name = name;
-        this.eventType = eventType;
         this.description = description;
     }
     
+    /*Getters and Setters*/
     public int getIdEvent() {
         return idEvent;
     }
@@ -43,21 +45,8 @@ public class Event {
         this.name = name;
     }
 
-    public String getEventType() {
-        return eventType;
-    }
-
-    public void setEventType(String eventType) {
-        this.eventType = eventType;
-    }
-
     public LocalDateTime getDate() {
         return date;
-    }
-
-    public void assignDate (LocalDateTime date) {
-        this.date = date;
-        System.out.println("The date " + date + " was added to the " + this.name + " event!");
     }
 
     public Location getLocation() {
@@ -75,4 +64,20 @@ public class Event {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Artist getArtist() {
+        return artist;
+    }
+
+    public void setArtist(Artist artist) {
+        this.artist = artist;
+    }
+    
+    /*Methods*/
+    public void assignDate (LocalDateTime date) {
+        this.date = date;
+        System.out.println("The date " + date + " was added to the " + this.name + " event!");
+    }
+    
+    public abstract void showDetails();
 }

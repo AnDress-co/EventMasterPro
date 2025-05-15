@@ -200,14 +200,14 @@ public class Main {
                                             locationManager.deleteAvailableDate(date.toLocalDate(), locationSelected);
                                         }
                                         
-                                        Event newEvent = new Event(eventId, name, category, date, locationSelected, description);
+                                        /*Event newEvent = new Event(eventId, name, date, locationSelected, description);
+                                        events.add(newEvent);
+                                        System.out.println("The event: " + newEvent.getName() + " was added successfully!");*/
+                                    } /*else {
+                                        Event newEvent = new Event(eventId, name, description);
                                         events.add(newEvent);
                                         System.out.println("The event: " + newEvent.getName() + " was added successfully!");
-                                    } else {
-                                        Event newEvent = new Event(eventId, name, category, description);
-                                        events.add(newEvent);
-                                        System.out.println("The event: " + newEvent.getName() + " was added successfully!");
-                                    }
+                                    }*/
                                 }
                                 break;
                             case 2:
@@ -303,7 +303,7 @@ public class Main {
                                         if(e.getLocation() == null){ locationName = "Empty"; } else { locationName = e.getLocation().getName(); }
                                         System.out.println("Event ID: " + e.getIdEvent()+"\n"
                                                 + "Name: " + e.getName() +"\n"
-                                                + "Category: " + e.getEventType()+"\n"
+                                                //+ "Category: " + e.getEventType()+"\n"
                                                 + "Date: " + e.getDate()+"\n"
                                                 + "Location: " + locationName +"\n"
                                                 + "Description: " + e.getDescription()+"\n"
@@ -316,7 +316,7 @@ public class Main {
                                 
                                 System.out.println("Type/Category event: ");
                                 String category = scanner.nextLine();
-                                events = eventManager.getEventsByType(category);
+                                events = eventManager.getEvents();
                                 if (events.isEmpty()) {
                                     System.out.println("No events found");
                                 } else {
@@ -325,7 +325,7 @@ public class Main {
                                         if(e.getLocation() == null){ locationName = "Empty"; } else { locationName = e.getLocation().getName(); }
                                         System.out.println("Event ID: " + e.getIdEvent()+"\n"
                                             + "Name: " + e.getName() +"\n"
-                                            + "Category: " + e.getEventType()+"\n"
+                                            //+ "Category: " + e.getEventType()+"\n"
                                             + "Date: " + e.getDate()+"\n"
                                             + "Location: " + locationName+"\n"
                                             + "Description: " + e.getDescription()+"\n"

@@ -16,7 +16,6 @@ public class EventManager {
         for (Event e : this.events) {
             if (e.getIdEvent()== idEvent) {
                 e.setName(name);
-                e.setEventType(eventType);
                 e.assignDate(date);
                 e.assignLocation(location);
                 e.setDescription(description);
@@ -38,7 +37,7 @@ public class EventManager {
         System.out.println("The event with the ID: " + idEvent + " was not found.");
     }
     
-    public List<Event> getEventsByType(String eventType){
+    /*public List<Event> getEventsByType(String eventType){
         List<Event> eventsByType = new ArrayList<>();
         for (Event e : this.events) {
             if (e.getEventType().toLowerCase().equals(eventType.toLowerCase())) {
@@ -46,9 +45,9 @@ public class EventManager {
             }
         }
         return eventsByType;
-    }
+    }*/
     
-        public Event getEventById(int id){
+    public Event getEventById(int id) {
         for (Event e : this.events) {
             if (e.getIdEvent() == id) {
                 return e;
