@@ -14,8 +14,8 @@ import artist.Artist;
 public class ConcertEvent extends Event {
     
     /*Constructors*/
-    public ConcertEvent(String name, LocalDateTime date, Location location, String description, Artist artist) {
-        super(name, date, location, description, artist);
+    public ConcertEvent(String name, LocalDateTime date, Location location, String description) {
+        super(name, date, location, description);
     }
 
     public ConcertEvent(String name, String eventType, String description) {
@@ -30,7 +30,6 @@ public class ConcertEvent extends Event {
         + "Date: " + this.getDate()+"\n"
         + "Location: " + this.getLocation() +"\n"
         + "Description: " + this.getDescription()+"\n"
-        + "Artis: " + this.getArtist()+"\n"
         + "---------------------------");
     }
     

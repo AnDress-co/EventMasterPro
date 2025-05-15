@@ -10,16 +10,14 @@ public abstract class Event {
     private LocalDateTime date;
     private Location location;
     private String description;
-    private Artist artist;
     
     /*Constructors*/
-    public Event(String name, LocalDateTime date, Location location, String description, Artist artist) {
+    public Event(String name, LocalDateTime date, Location location, String description) {
         this.idEvent += 1;
         this.name = name;
         this.date = date;
         this.location = location;
         this.description = description;
-        this.artist = artist;
     }
     
     public Event(String name, String eventType, String description) {
@@ -63,14 +61,6 @@ public abstract class Event {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Artist getArtist() {
-        return artist;
-    }
-
-    public void setArtist(Artist artist) {
-        this.artist = artist;
     }
     
     /*Methods*/

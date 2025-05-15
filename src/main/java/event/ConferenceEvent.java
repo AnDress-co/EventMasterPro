@@ -14,8 +14,8 @@ import location.Location;
 public class ConferenceEvent extends Event {
     
     /*Constructors*/
-    public ConferenceEvent(String name, LocalDateTime date, Location location, String description, Artist artist) {
-        super(name, date, location, description, artist);
+    public ConferenceEvent(String name, LocalDateTime date, Location location, String description) {
+        super(name, date, location, description);
     }
 
     public ConferenceEvent(String name, String eventType, String description) {
@@ -30,7 +30,6 @@ public class ConferenceEvent extends Event {
         + "Date: " + this.getDate()+"\n"
         + "Location: " + this.getLocation() +"\n"
         + "Description: " + this.getDescription()+"\n"
-        + "Artis: " + this.getArtist()+"\n"
         + "---------------------------");
     }
     

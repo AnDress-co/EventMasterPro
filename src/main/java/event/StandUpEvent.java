@@ -14,8 +14,8 @@ import location.Location;
  */
 public class StandUpEvent extends Event {
 
-    public StandUpEvent(String name, LocalDateTime date, Location location, String description, Artist artist) {
-        super(name, date, location, description, artist);
+    public StandUpEvent(String name, LocalDateTime date, Location location, String description) {
+        super(name, date, location, description);
     }
 
     public StandUpEvent(String name, String eventType, String description) {
@@ -29,7 +29,6 @@ public class StandUpEvent extends Event {
         + "Date: " + this.getDate()+"\n"
         + "Location: " + this.getLocation() +"\n"
         + "Description: " + this.getDescription()+"\n"
-        + "Artis: " + this.getArtist()+"\n"
         + "---------------------------");
     }
 }
