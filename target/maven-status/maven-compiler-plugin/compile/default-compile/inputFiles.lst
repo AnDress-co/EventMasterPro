@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\access\Access.java
 C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\access\Attendees.java
 C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\artist\Artist.java
@@ -10,3 +11,17 @@ C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software
 C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\sales\Entry.java
 C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\sales\Sales.java
 C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\sales\TypeEntry.java
+=======
+C:\Users\soporte.agente2\Documentos\EventMasterPro\src\main\java\access\Access.java
+C:\Users\soporte.agente2\Documentos\EventMasterPro\src\main\java\access\Attendees.java
+C:\Users\soporte.agente2\Documentos\EventMasterPro\src\main\java\sales\Entry.java
+C:\Users\soporte.agente2\Documentos\EventMasterPro\src\main\java\event\EventManager.java
+C:\Users\soporte.agente2\Documentos\EventMasterPro\src\main\java\artist\Artist.java
+C:\Users\soporte.agente2\Documentos\EventMasterPro\src\main\java\event\Event.java
+C:\Users\soporte.agente2\Documentos\EventMasterPro\src\main\java\location\Location.java
+C:\Users\soporte.agente2\Documentos\EventMasterPro\src\main\java\com\mycompany\eventmasterpro\Main.java
+C:\Users\soporte.agente2\Documentos\EventMasterPro\src\main\java\finance\Finance.java
+C:\Users\soporte.agente2\Documentos\EventMasterPro\src\main\java\sales\TypeEntry.java
+C:\Users\soporte.agente2\Documentos\EventMasterPro\src\main\java\sales\Sales.java
+C:\Users\soporte.agente2\Documentos\EventMasterPro\src\main\java\location\LocationManager.java
+>>>>>>> 1f9879c3334a08037b53a170b170a4621dd03162
