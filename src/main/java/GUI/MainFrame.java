@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import GUI.artistFrames.*;
+
 /**
  *
  * @author soporte.agente2
@@ -33,9 +35,9 @@ public class MainFrame extends javax.swing.JFrame {
         locationManagement = new javax.swing.JMenu();
         eventManagement = new javax.swing.JMenu();
         participantManagement = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        registerArtist = new javax.swing.JMenuItem();
+        showArtists = new javax.swing.JMenuItem();
+        artistHistory = new javax.swing.JMenuItem();
         ticketManagement = new javax.swing.JMenu();
         accessControl = new javax.swing.JMenu();
         financialManagement = new javax.swing.JMenu();
@@ -69,14 +71,29 @@ public class MainFrame extends javax.swing.JFrame {
         participantManagement.setForeground(new java.awt.Color(255, 255, 255));
         participantManagement.setText("Participant Management");
 
-        jMenuItem1.setText("Register an artist");
-        participantManagement.add(jMenuItem1);
+        registerArtist.setText("Register an artist");
+        registerArtist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerArtistActionPerformed(evt);
+            }
+        });
+        participantManagement.add(registerArtist);
 
-        jMenuItem2.setText("Show all artists");
-        participantManagement.add(jMenuItem2);
+        showArtists.setText("Show all artists");
+        showArtists.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showArtistsActionPerformed(evt);
+            }
+        });
+        participantManagement.add(showArtists);
 
-        jMenuItem3.setText("Artist history");
-        participantManagement.add(jMenuItem3);
+        artistHistory.setText("Artist history");
+        artistHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                artistHistoryActionPerformed(evt);
+            }
+        });
+        participantManagement.add(artistHistory);
 
         mainMenu.add(participantManagement);
 
@@ -98,25 +115,25 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(250, 250, 250))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(310, 310, 310)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(jLabel3)))
-                .addGap(255, 255, 255))
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(317, 317, 317)
+                        .addComponent(jLabel2)))
+                .addGap(328, 328, 328))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(120, 120, 120)
+                .addGap(116, 116, 116)
                 .addComponent(jLabel1)
-                .addGap(2, 2, 2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
                 .addComponent(jLabel3)
@@ -125,6 +142,24 @@ public class MainFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void registerArtistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerArtistActionPerformed
+        ArtistRegistration artistRegistration =  new ArtistRegistration();
+        artistRegistration.setLocationRelativeTo(null);
+        artistRegistration.setVisible(true);
+    }//GEN-LAST:event_registerArtistActionPerformed
+
+    private void showArtistsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showArtistsActionPerformed
+        ShowAllArtist showAllArtist =  new ShowAllArtist();
+        showAllArtist.setLocationRelativeTo(null);
+        showAllArtist.setVisible(true);
+    }//GEN-LAST:event_showArtistsActionPerformed
+
+    private void artistHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistHistoryActionPerformed
+        ArtistHistory artistsHistory = new ArtistHistory();
+        artistsHistory.setLocationRelativeTo(null);
+        artistsHistory.setVisible(true);
+    }//GEN-LAST:event_artistHistoryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,17 +198,17 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu accessControl;
+    private javax.swing.JMenuItem artistHistory;
     private javax.swing.JMenu eventManagement;
     private javax.swing.JMenu financialManagement;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenu locationManagement;
     private javax.swing.JMenuBar mainMenu;
     private javax.swing.JMenu participantManagement;
+    private javax.swing.JMenuItem registerArtist;
+    private javax.swing.JMenuItem showArtists;
     private javax.swing.JMenu ticketManagement;
     // End of variables declaration//GEN-END:variables
 }

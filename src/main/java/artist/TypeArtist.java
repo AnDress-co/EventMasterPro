@@ -1,6 +1,7 @@
 package artist;
 
 import java.util.ArrayList;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -28,17 +29,13 @@ public class TypeArtist {
         this.artistsCategory = artistsCategory;
     }
     
-    /*Methods*/
+    /*Methods*/        
     
-    public void registerCategory(String newCategory) {
-        artistsCategory.add(newCategory);
-        System.out.println("New artist category added!");
-    }
-    
-    public void categoeyList() {
-        System.out.println("List of Registered artist category: ");        
+    public void categoryList(JComboBox<String> typeArtistSelection) {
+        typeArtistSelection.removeAllItems();
+        
         for (String typeArtist : artistsCategory) {
-            System.out.println(typeArtist);        
+            typeArtistSelection.addItem(typeArtist);
         }
     }
 }

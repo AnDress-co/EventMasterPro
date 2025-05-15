@@ -12,8 +12,8 @@ public class Artist{
     private String contact;
     private String itemHistory;
     private String typeArtist;
+    private ArrayList<String> history;     
     private ArrayList<Artist> lisArtists;
-    private ArrayList<String> history;        
     
     /*Contructor*/
     
