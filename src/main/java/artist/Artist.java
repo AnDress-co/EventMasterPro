@@ -1,29 +1,39 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package artist;
 
-/**
- *
- * @author MarlonG
- */
-public class Artist {
+import java.util.ArrayList;
+
+
+
+public class Artist{
+    private static int idCounter = 1;
     private int id;
     private String name;
     private String description;
     private String contact;
-    private String history;
-
-    public Artist(int id, String name, String description, String contact, String history) {
-        this.id = id;
+    private String itemHistory;
+    private String typeArtist;
+    private ArrayList<String> history;     
+    private ArrayList<Artist> lisArtists;
+    
+    /*Contructor*/
+    
+    public Artist() {
+        
+    }
+    
+    public Artist(String name, String description, String contact, String itemHistory, String typeArtist) {        
+        this.id = idCounter++;
         this.name = name;
         this.description = description;
         this.contact = contact;
-        this.history = history;
-    }
+        this.itemHistory = itemHistory;
+        this.typeArtist = typeArtist;
+        this.lisArtists = new ArrayList<>();
+        this.history = new ArrayList<>();
+    }        
 
-    // Getters and Setters
+    /*Getters and Setters*/
+    
     public int getId() {
         return id;
     }
@@ -56,32 +66,40 @@ public class Artist {
         this.contact = contact;
     }
 
-    public String getHistory() {
+    public String getItemHistory() {
+        return itemHistory;
+    }
+
+    public void setItemHistory(String itemHistory) {
+        this.itemHistory = itemHistory;
+    }
+
+    public ArrayList<String> getHistory() {
         return history;
-    }
+    }        
 
-    public void setHistory(String history) {
-        this.history = history;
-    }
-
-    // Methods
+    /*Methods*/
+    
     public void register() {
+        Artist newArtist = new Artist(this.name, this.description, this.contact, this.itemHistory, this.typeArtist);
+        history.add(itemHistory);
+        lisArtists.add(newArtist);
         System.out.println("Registering artist: " + this.name);
     }
-
-    public void assignEvent() {
-        System.out.println("Assigning event to artist: " + this.name);
+    
+    public void artistList() {
+        System.out.println("List of Registered artist category: ");
+        if(lisArtists.isEmpty()){
+            System.out.println("No category have been redistered yet.");
+        } else {
+            for (Artist artist : lisArtists) {
+                System.out.println(artist.getName());
+            }
+        }
     }
 
-    public void listHistory() {
-        System.out.println("History of " + this.name + ": " + this.history);
-    }
-
-    public void showInfo() {
-        System.out.println("Artist ID: " + id);
-        System.out.println("Name: " + name);
-        System.out.println("Description: " + description);
-        System.out.println("Contact: " + contact);
-        System.out.println("History: " + history);
-    }
+    public void addEventHistory() {
+        history.add(this.itemHistory);
+        System.out.println("New event added to the artist's history!");
+    }   
 }

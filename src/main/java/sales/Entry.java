@@ -1,15 +1,14 @@
 package sales;
 
-/**
- *
- * @author MarlonG
- */
+import access.Attendees;
+import java.util.ArrayList;
+
 
 public class Entry {    
     private String name;
-    private double price;
+    private double price;    
     
-    /*Contructor Entry*/
+    /*Contructor*/
     
     public Entry() {
         
@@ -17,10 +16,10 @@ public class Entry {
     
     public Entry(String name, double price) {        
         this.name = name;
-        this.price = price;
+        this.price = price;        
     }
        
-    /*Getters and Setters Entry*/
+    /*Getters and Setters*/
 
     public String getName() {
         return name;
@@ -36,6 +35,5 @@ public class Entry {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-        
+    }          
 }
