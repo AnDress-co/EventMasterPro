@@ -3,11 +3,16 @@ package event;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JComboBox;
 import location.Location;
 
 public class EventManager {
     private List<Event> events;
 
+    public EventManager() {
+        
+    }
+        
     public EventManager(List<Event> events) {
         this.events = events;
     }
@@ -58,5 +63,13 @@ public class EventManager {
      
     public List<Event> getEvents() {
         return this.events;
+    }
+    
+    public void eventListBox(JComboBox<String> artistHistorySelection) {
+        artistHistorySelection.removeAllItems();
+        
+        for (Event event : events) {
+            artistHistorySelection.addItem(event.getName());
+        }
     }
 }

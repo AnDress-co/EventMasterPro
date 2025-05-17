@@ -31,7 +31,7 @@ public class TypeArtist {
     
     /*Methods*/        
     
-    public void categoryList(JComboBox<String> typeArtistSelection) {
+    public void categoryListBox(JComboBox<String> typeArtistSelection) {
         typeArtistSelection.removeAllItems();
         
         for (String typeArtist : artistsCategory) {

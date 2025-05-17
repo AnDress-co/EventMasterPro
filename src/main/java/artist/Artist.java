@@ -1,6 +1,7 @@
 package artist;
 
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 
 
@@ -12,13 +13,12 @@ public class Artist{
     private String contact;
     private String itemHistory;
     private String typeArtist;
-    private ArrayList<String> history;     
-    private ArrayList<Artist> lisArtists;
+    private final ArrayList<String> history;         
     
     /*Contructor*/
     
-    public Artist() {
-        
+    public Artist() {        
+        this.history = new ArrayList<>();
     }
     
     public Artist(String name, String description, String contact, String itemHistory, String typeArtist) {        
@@ -27,8 +27,7 @@ public class Artist{
         this.description = description;
         this.contact = contact;
         this.itemHistory = itemHistory;
-        this.typeArtist = typeArtist;
-        this.lisArtists = new ArrayList<>();
+        this.typeArtist = typeArtist;        
         this.history = new ArrayList<>();
     }        
 
@@ -36,11 +35,7 @@ public class Artist{
     
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    }  
 
     public String getName() {
         return name;
@@ -76,23 +71,31 @@ public class Artist{
 
     public ArrayList<String> getHistory() {
         return history;
-    }        
+    }    
+
+    public String getTypeArtist() {
+        return typeArtist;
+    }
+
+    public void setTypeArtist(String typeArtist) {
+        this.typeArtist = typeArtist;
+    }
 
     /*Methods*/
     
-    public void register() {
-        Artist newArtist = new Artist(this.name, this.description, this.contact, this.itemHistory, this.typeArtist);
+    public void register(String name, String description, String contact, String itemHistory, String typeArtist) {
+        Artist newArtist = new Artist(name, description, contact, itemHistory, typeArtist);
         history.add(itemHistory);
-        lisArtists.add(newArtist);
-        System.out.println("Registering artist: " + this.name);
+        states.AppState.listArtists.add(newArtist);
+        System.out.println("Registering artist");                
     }
     
     public void artistList() {
         System.out.println("List of Registered artist category: ");
-        if(lisArtists.isEmpty()){
+        if(states.AppState.listArtists.isEmpty()){
             System.out.println("No category have been redistered yet.");
         } else {
-            for (Artist artist : lisArtists) {
+            for (Artist artist : states.AppState.listArtists) {
                 System.out.println(artist.getName());
             }
         }
@@ -101,5 +104,21 @@ public class Artist{
     public void addEventHistory() {
         history.add(this.itemHistory);
         System.out.println("New event added to the artist's history!");
-    }   
+    }
+    
+    public void artistListTable(DefaultTableModel model, ArrayList<Artist> list) {  
+        model.setRowCount(0);
+        for(Artist artist : list) {
+            if(artist != null) {
+                System.out.println("Añadiendo a la tabla: " + artist.getName());
+                model.addRow(new Object[] {
+                    artist.getId(),
+                    artist.getName(),
+                    artist.getContact(),
+                    artist.getTypeArtist(),
+                    artist.getDescription()
+                });
+            }            
+        }
+    }
 }

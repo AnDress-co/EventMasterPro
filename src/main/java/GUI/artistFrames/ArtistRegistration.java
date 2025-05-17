@@ -1,6 +1,10 @@
 package GUI.artistFrames;
 
-import artist.TypeArtist;
+import artist.*;
+import event.*;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 public class ArtistRegistration extends javax.swing.JFrame {
 
@@ -10,7 +14,19 @@ public class ArtistRegistration extends javax.swing.JFrame {
     public ArtistRegistration() {
         initComponents();
         TypeArtist typeArtist = new TypeArtist();
-        typeArtist.categoryList(typeArtistSelection);
+        typeArtist.categoryListBox(typeArtistSelection);
+        
+        //Ejemplo mientras se crea un evento en la lista.
+        Event event = new Event("Bad Bunny Fest", "Concierto", "Se dara un conciertod e bad bunny en Medellin.") {
+            @Override
+            public void showDetails() {
+                //
+            }
+        };
+        List<Event> events = new ArrayList<>();
+        events.add(event);
+        EventManager eventManager = new EventManager(events);                
+        eventManager.eventListBox(artistHistorySelection);
     }
 
     /**
@@ -37,9 +53,9 @@ public class ArtistRegistration extends javax.swing.JFrame {
         registerArtist = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 450));
+        setPreferredSize(new java.awt.Dimension(500, 450));
         setResizable(false);
-        setSize(new java.awt.Dimension(800, 450));
+        setSize(new java.awt.Dimension(500, 450));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Artist Register Screen");
@@ -69,12 +85,15 @@ public class ArtistRegistration extends javax.swing.JFrame {
 
         txtHistory.setText("Add event to artist's history");
 
-        artistHistorySelection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         registerArtist.setBackground(new java.awt.Color(0, 153, 102));
         registerArtist.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         registerArtist.setForeground(new java.awt.Color(255, 255, 255));
         registerArtist.setText("Register artist");
+        registerArtist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerArtistActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,27 +101,26 @@ public class ArtistRegistration extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(registerArtist)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtHistory)
-                        .addComponent(txtType)
-                        .addComponent(txtContact)
-                        .addComponent(artistName)
-                        .addComponent(txtDescription)
-                        .addComponent(jLabel3)
-                        .addComponent(txtName)
-                        .addComponent(jLabel1)
-                        .addComponent(artistDescription)
-                        .addComponent(artistContact)
-                        .addComponent(typeArtistSelection, 0, 205, Short.MAX_VALUE)
-                        .addComponent(artistHistorySelection, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(550, Short.MAX_VALUE))
+                    .addComponent(txtHistory)
+                    .addComponent(txtType)
+                    .addComponent(txtContact)
+                    .addComponent(txtDescription)
+                    .addComponent(jLabel3)
+                    .addComponent(txtName)
+                    .addComponent(jLabel1)
+                    .addComponent(artistName)
+                    .addComponent(artistDescription)
+                    .addComponent(artistContact)
+                    .addComponent(typeArtistSelection, 0, 320, Short.MAX_VALUE)
+                    .addComponent(artistHistorySelection, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtName)
@@ -124,7 +142,7 @@ public class ArtistRegistration extends javax.swing.JFrame {
                 .addComponent(txtHistory)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(artistHistorySelection, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(registerArtist)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
@@ -141,6 +159,17 @@ public class ArtistRegistration extends javax.swing.JFrame {
     private void typeArtistSelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeArtistSelectionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_typeArtistSelectionActionPerformed
+
+    private void registerArtistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerArtistActionPerformed
+        try {
+            Artist artist = new Artist();            
+            artist.register(artistName.getText(), artistDescription.getText(), artistContact.getText(), (String) typeArtistSelection.getSelectedItem(), (String) artistHistorySelection.getSelectedItem());            
+            JOptionPane.showMessageDialog(this, "Registered artist!");
+        } catch (Exception e) {
+            System.out.println((String) artistHistorySelection.getSelectedItem());
+            JOptionPane.showMessageDialog(this, "[ERROR] " + e.getMessage(), "error", JOptionPane.ERROR_MESSAGE);            
+        }
+    }//GEN-LAST:event_registerArtistActionPerformed
 
     /**
      * @param args the command line arguments
