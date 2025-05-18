@@ -11,6 +11,8 @@ location\Location.class
 location\LocationManager.class
 sales\TypeEntry.class
 GUI\artistFrames\ArtistRegistration$4.class
+GUI\artistFrames\ArtistHistory$2.class
+GUI\artistFrames\ArtistHistory$4.class
 com\mycompany\eventmasterpro\Main.class
 GUI\MainFrame$2.class
 event\StandUpEvent.class
@@ -21,11 +23,14 @@ states\AppState.class
 GUI\artistFrames\ShowAllArtist$1.class
 access\Access.class
 GUI\artistFrames\ArtistRegistration$1.class
+GUI\artistFrames\ArtistRegistration$6.class
 artist\TypeArtist.class
 GUI\artistFrames\ArtistRegistration.class
+GUI\artistFrames\ArtistHistory$5.class
 GUI\MainFrame$4.class
 GUI\MainFrame$3.class
 GUI\MainFrame.class
+GUI\artistFrames\ArtistHistory$3.class
 event\ConcertEvent.class
 GUI\artistFrames\ArtistRegistration$3.class
 finance\Finance.class

@@ -1,6 +1,9 @@
 package artist;
 
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -12,13 +15,12 @@ public class Artist{
     private String description;
     private String contact;
     private String itemHistory;
-    private String typeArtist;
-    private final ArrayList<String> history;         
+    private String typeArtist;             
     
     /*Contructor*/
     
     public Artist() {        
-        this.history = new ArrayList<>();
+        
     }
     
     public Artist(String name, String description, String contact, String itemHistory, String typeArtist) {        
@@ -28,7 +30,6 @@ public class Artist{
         this.contact = contact;
         this.itemHistory = itemHistory;
         this.typeArtist = typeArtist;        
-        this.history = new ArrayList<>();
     }        
 
     /*Getters and Setters*/
@@ -69,10 +70,6 @@ public class Artist{
         this.itemHistory = itemHistory;
     }
 
-    public ArrayList<String> getHistory() {
-        return history;
-    }    
-
     public String getTypeArtist() {
         return typeArtist;
     }
@@ -85,32 +82,37 @@ public class Artist{
     
     public void register(String name, String description, String contact, String itemHistory, String typeArtist) {
         Artist newArtist = new Artist(name, description, contact, itemHistory, typeArtist);
-        history.add(itemHistory);
+        states.AppState.artistHistory.add(itemHistory);        
         states.AppState.listArtists.add(newArtist);
         System.out.println("Registering artist");                
     }
-    
-    public void artistList() {
-        System.out.println("List of Registered artist category: ");
-        if(states.AppState.listArtists.isEmpty()){
-            System.out.println("No category have been redistered yet.");
-        } else {
-            for (Artist artist : states.AppState.listArtists) {
-                System.out.println(artist.getName());
+       
+    public void searchArtistToAddHistory(int id, JLabel artistNameJLabel, JList<String> listArtistJList) {
+        for(Artist artist: states.AppState.listArtists) {
+            if(artist.getId() == id) {
+                artistNameJLabel.setText(artist.getName());                
+                artist.updateArtistHistory(listArtistJList);
+                break;
             }
-        }
+        }        
     }
-
-    public void addEventHistory() {
-        history.add(this.itemHistory);
-        System.out.println("New event added to the artist's history!");
+    
+    public void addHistoryToArtist(String newArtistHistoy) {
+        states.AppState.artistHistory.add(newArtistHistoy);
+    }
+    
+    public void updateArtistHistory(JList<String> listArtistJList) {
+        DefaultListModel<String> model = new DefaultListModel<>();        
+        for(String historyArtist : states.AppState.artistHistory) {
+            model.addElement(historyArtist);
+        }        
+        listArtistJList.setModel(model);        
     }
     
     public void artistListTable(DefaultTableModel model, ArrayList<Artist> list) {  
         model.setRowCount(0);
         for(Artist artist : list) {
-            if(artist != null) {
-                System.out.println("Añadiendo a la tabla: " + artist.getName());
+            if(artist != null) {                
                 model.addRow(new Object[] {
                     artist.getId(),
                     artist.getName(),

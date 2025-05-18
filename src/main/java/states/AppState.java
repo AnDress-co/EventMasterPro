@@ -4,5 +4,6 @@ import artist.Artist;
 import java.util.ArrayList;
 
 public class AppState {
-    public static ArrayList<Artist> listArtists = new ArrayList<>();    
+    public static ArrayList<Artist> listArtists = new ArrayList<>();
+    public static ArrayList<String> artistHistory = new ArrayList<>();
 }

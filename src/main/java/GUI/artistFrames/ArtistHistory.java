@@ -4,6 +4,13 @@
  */
 package GUI.artistFrames;
 
+import artist.Artist;
+import event.Event;
+import event.EventManager;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author soporte.agente2
@@ -15,6 +22,26 @@ public class ArtistHistory extends javax.swing.JFrame {
      */
     public ArtistHistory() {
         initComponents();
+        
+        //Ejemplo mientras se crea un evento en la lista.
+        Event event = new Event("Bad Bunny Fest", "Concierto", "Se dara un conciertod e bad bunny en Medellin.") {
+            @Override
+            public void showDetails() {
+                //
+            }
+        };
+        
+        Event event1 = new Event("Trinidad Blue", "Concierto", "Concierto den Macarena Blue.") {
+            @Override
+            public void showDetails() {
+                //
+            }
+        };
+        List<Event> events = new ArrayList<>();
+        events.add(event);
+        events.add(event1);
+        EventManager eventManager = new EventManager(events);                
+        eventManager.eventListBox(artistHistorySelection);
     }
 
     /**
@@ -27,14 +54,61 @@ public class ArtistHistory extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        artistId = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        artistListById = new javax.swing.JList<>();
+        jLabel5 = new javax.swing.JLabel();
+        artistName = new javax.swing.JLabel();
+        btnSearchArtist = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        artistHistorySelection = new javax.swing.JComboBox<>();
+        bntAddhistory = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 450));
+        setPreferredSize(new java.awt.Dimension(680, 480));
         setResizable(false);
-        setSize(new java.awt.Dimension(800, 450));
+        setSize(new java.awt.Dimension(680, 480));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Artist History Screen");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Add history to artist");
+
+        jLabel3.setText("Artist ID");
+
+        jLabel4.setText("Name:");
+
+        jScrollPane1.setViewportView(artistListById);
+
+        jLabel5.setText("History");
+
+        artistName.setText("**********************");
+
+        btnSearchArtist.setBackground(new java.awt.Color(0, 153, 102));
+        btnSearchArtist.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSearchArtist.setForeground(new java.awt.Color(255, 255, 255));
+        btnSearchArtist.setText("Search artist");
+        btnSearchArtist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchArtistActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Events");
+
+        bntAddhistory.setBackground(new java.awt.Color(0, 153, 102));
+        bntAddhistory.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bntAddhistory.setForeground(new java.awt.Color(255, 255, 255));
+        bntAddhistory.setText("Add to history");
+        bntAddhistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntAddhistoryActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -42,19 +116,84 @@ public class ArtistHistory extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel1)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSearchArtist)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel3))
+                                    .addGap(192, 192, 192))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(artistId)
+                                    .addGap(104, 104, 104)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(288, 288, 288))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(artistName, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bntAddhistory)
+                            .addComponent(jLabel6)
+                            .addComponent(artistHistorySelection, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(397, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(artistId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(artistHistorySelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(artistName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bntAddhistory))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSearchArtist)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(14, 14, 14))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSearchArtistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchArtistActionPerformed
+        try {
+            Artist artist = new Artist();
+            int id = Integer.parseInt(artistId.getText());
+            artist.searchArtistToAddHistory(id, artistName, artistListById);
+            JOptionPane.showMessageDialog(this, "Artist found!");
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "[ERROR] Please enter a number type value!");
+        }        
+    }//GEN-LAST:event_btnSearchArtistActionPerformed
+
+    private void bntAddhistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAddhistoryActionPerformed
+        Artist artist = new Artist();
+        artist.addHistoryToArtist((String) artistHistorySelection.getSelectedItem());
+        artist.updateArtistHistory(artistListById);
+        JOptionPane.showMessageDialog(this, "Event added to history!");
+    }//GEN-LAST:event_bntAddhistoryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,6 +231,18 @@ public class ArtistHistory extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> artistHistorySelection;
+    private javax.swing.JTextField artistId;
+    private javax.swing.JList<String> artistListById;
+    private javax.swing.JLabel artistName;
+    private javax.swing.JButton bntAddhistory;
+    private javax.swing.JButton btnSearchArtist;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
