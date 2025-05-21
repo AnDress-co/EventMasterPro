@@ -15,7 +15,8 @@ public class Artist{
     private String description;
     private String contact;
     private String itemHistory;
-    private String typeArtist;             
+    private String typeArtist;
+    private ArrayList<String> artistHistory  = new ArrayList<>();
     
     /*Contructor*/
     
@@ -29,7 +30,8 @@ public class Artist{
         this.description = description;
         this.contact = contact;
         this.itemHistory = itemHistory;
-        this.typeArtist = typeArtist;        
+        this.typeArtist = typeArtist;
+        this.artistHistory.add(itemHistory);
     }        
 
     /*Getters and Setters*/
@@ -78,11 +80,18 @@ public class Artist{
         this.typeArtist = typeArtist;
     }
 
+    public ArrayList<String> getArtistHistory() {
+        return artistHistory;
+    }
+
+    public void setArtistHistory(ArrayList<String> artistHistory) {
+        this.artistHistory = artistHistory;
+    }        
+
     /*Methods*/
     
     public void register(String name, String description, String contact, String itemHistory, String typeArtist) {
-        Artist newArtist = new Artist(name, description, contact, itemHistory, typeArtist);
-        states.AppState.artistHistory.add(itemHistory);        
+        Artist newArtist = new Artist(name, description, contact, itemHistory, typeArtist);        
         states.AppState.listArtists.add(newArtist);
         System.out.println("Registering artist");                
     }
@@ -91,19 +100,29 @@ public class Artist{
         for(Artist artist: states.AppState.listArtists) {
             if(artist.getId() == id) {
                 artistNameJLabel.setText(artist.getName());                
-                artist.updateArtistHistory(listArtistJList);
+                artist.updateArtistHistory(listArtistJList, artist.getArtistHistory());
                 break;
             }
         }        
     }
     
-    public void addHistoryToArtist(String newArtistHistoy) {
-        states.AppState.artistHistory.add(newArtistHistoy);
+    public void addHistory(String newArtistHistoy) {
+        this.artistHistory.add(newArtistHistoy);
     }
     
-    public void updateArtistHistory(JList<String> listArtistJList) {
+    
+    public void addHistoryToArtist(int id, String newArtistHistoy, JList<String> listArtistJList) {
+        for(Artist artist: states.AppState.listArtists) {
+            if(artist.getId() == id) {
+                artist.addHistory(newArtistHistoy);
+                artist.updateArtistHistory(listArtistJList, artist.getArtistHistory());
+            }
+        }                
+    }
+    
+    public void updateArtistHistory(JList<String> listArtistJList, ArrayList<String> history) {
         DefaultListModel<String> model = new DefaultListModel<>();        
-        for(String historyArtist : states.AppState.artistHistory) {
+        for(String historyArtist : history) {
             model.addElement(historyArtist);
         }        
         listArtistJList.setModel(model);        

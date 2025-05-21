@@ -5,6 +5,7 @@
 package GUI;
 
 import GUI.artistFrames.*;
+import GUI.ticketFrames.*;
 
 /**
  *
@@ -39,6 +40,9 @@ public class MainFrame extends javax.swing.JFrame {
         showArtists = new javax.swing.JMenuItem();
         artistHistory = new javax.swing.JMenuItem();
         ticketManagement = new javax.swing.JMenu();
+        createEntry = new javax.swing.JMenuItem();
+        showEntryTypes = new javax.swing.JMenuItem();
+        ticketSales = new javax.swing.JMenuItem();
         accessControl = new javax.swing.JMenu();
         financialManagement = new javax.swing.JMenu();
 
@@ -99,6 +103,31 @@ public class MainFrame extends javax.swing.JFrame {
 
         ticketManagement.setForeground(new java.awt.Color(255, 255, 255));
         ticketManagement.setText("Ticket Management");
+
+        createEntry.setText("New ticket type");
+        createEntry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createEntryActionPerformed(evt);
+            }
+        });
+        ticketManagement.add(createEntry);
+
+        showEntryTypes.setText("See ticket types");
+        showEntryTypes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showEntryTypesActionPerformed(evt);
+            }
+        });
+        ticketManagement.add(showEntryTypes);
+
+        ticketSales.setText("Ticket Sales");
+        ticketSales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ticketSalesActionPerformed(evt);
+            }
+        });
+        ticketManagement.add(ticketSales);
+
         mainMenu.add(ticketManagement);
 
         accessControl.setForeground(new java.awt.Color(255, 255, 255));
@@ -161,6 +190,24 @@ public class MainFrame extends javax.swing.JFrame {
         artistsHistory.setVisible(true);
     }//GEN-LAST:event_artistHistoryActionPerformed
 
+    private void createEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createEntryActionPerformed
+        CreateEntryType createEntryType = new CreateEntryType();
+        createEntryType.setLocationRelativeTo(null);
+        createEntryType.setVisible(true);
+    }//GEN-LAST:event_createEntryActionPerformed
+
+    private void showEntryTypesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showEntryTypesActionPerformed
+        ShowEntryType showEntryType = new ShowEntryType();
+        showEntryType.setLocationRelativeTo(null);
+        showEntryType.setVisible(true);
+    }//GEN-LAST:event_showEntryTypesActionPerformed
+
+    private void ticketSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ticketSalesActionPerformed
+        TicketSales ticketsSales = new TicketSales();
+        ticketsSales.setLocationRelativeTo(null);
+        ticketsSales.setVisible(true);
+    }//GEN-LAST:event_ticketSalesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -199,6 +246,7 @@ public class MainFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu accessControl;
     private javax.swing.JMenuItem artistHistory;
+    private javax.swing.JMenuItem createEntry;
     private javax.swing.JMenu eventManagement;
     private javax.swing.JMenu financialManagement;
     private javax.swing.JLabel jLabel1;
@@ -209,6 +257,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenu participantManagement;
     private javax.swing.JMenuItem registerArtist;
     private javax.swing.JMenuItem showArtists;
+    private javax.swing.JMenuItem showEntryTypes;
     private javax.swing.JMenu ticketManagement;
+    private javax.swing.JMenuItem ticketSales;
     // End of variables declaration//GEN-END:variables
 }

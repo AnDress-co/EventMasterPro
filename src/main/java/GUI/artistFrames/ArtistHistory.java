@@ -190,8 +190,8 @@ public class ArtistHistory extends javax.swing.JFrame {
 
     private void bntAddhistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAddhistoryActionPerformed
         Artist artist = new Artist();
-        artist.addHistoryToArtist((String) artistHistorySelection.getSelectedItem());
-        artist.updateArtistHistory(artistListById);
+        int id = Integer.parseInt(artistId.getText());
+        artist.addHistoryToArtist(id, (String) artistHistorySelection.getSelectedItem(), artistListById);        
         JOptionPane.showMessageDialog(this, "Event added to history!");
     }//GEN-LAST:event_bntAddhistoryActionPerformed
 

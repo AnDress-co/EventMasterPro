@@ -2,52 +2,60 @@ package sales;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableModel;
 
 
 
 public class TypeEntry extends Entry{    
-    private HashMap<String, Double> typeEntry;
     
     /*Contructor*/
-
     public TypeEntry() {
-        this.typeEntry = new HashMap<>();
-    }        
+        
+    }
 
     public TypeEntry(String name, double price) {
-        super(name, price);
-        this.typeEntry = new HashMap<>();
+        super(name, price);        
     }
             
     /*Getters and Setters*/          
-
-    public HashMap<String, Double> getTypeEntry() {        
-        return typeEntry;
-    }
-
-    public void setTypeEntry(HashMap<String, Double> typeEntry) {
-        this.typeEntry = typeEntry;
-    }           
+          
     
     /*Methods*/
     
-    public void addEntryType() {        
-        if (typeEntry.containsKey(this.getName())) {
-            System.out.println("The entry type '" + this.getName() + "' already exists. Updating price...");
-        } else {
-            System.out.println("Adding entry type '" + this.getName() + "' with price " + this.getPrice() + ".");
-        }
-        typeEntry.put(this.getName(), this.getPrice());
+    public void addEntryType() {                
+        states.AppState.typeEntry.put(this.getName().toLowerCase(), this.getPrice());        
     }
     
-    public void entrysList() {
-        if (typeEntry.isEmpty()) {
-            System.out.println("There are no entry types registered.");
-        } else {
-            System.out.println("Registered entry types:");            
-            for (Map.Entry<String, Double> entry : typeEntry.entrySet()) {
-                System.out.println("Name: " + entry.getKey() + " || " + "Price: " + entry.getValue());
+    public void entryTypeTable(DefaultTableModel model, HashMap<String, Double> typeEntryList) {
+        model.setRowCount(0);
+        for (Map.Entry<String, Double> entry : states.AppState.typeEntry.entrySet()) {            
+            if(entry.getKey() != null && entry.getValue() != null){
+                model.addRow(new Object[] {
+                    entry.getKey(),
+                    entry.getValue()
+                });
             }
-        }                
+        }
+    }
+    
+    public void entryTypeListBox(JComboBox<String> typeEntrySelection) {
+        if(states.AppState.typeEntry.isEmpty()){
+            typeEntrySelection.addItem("No ticket type registered!");
+        } else {
+            typeEntrySelection.removeAllItems();
+            for (Map.Entry<String, Double> entry : states.AppState.typeEntry.entrySet()) {
+                typeEntrySelection.addItem(entry.getKey());
+            }
+        }        
+    }
+    
+    public void setPriceLabel (JLabel ticketPrice, String nameTicket) {
+        for (Map.Entry<String, Double> entry : states.AppState.typeEntry.entrySet()) {
+            if(entry.getKey().equals(nameTicket)){                
+                ticketPrice.setText(Double.toString(entry.getValue()));
+            }
+        }
     }
 }

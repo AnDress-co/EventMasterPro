@@ -1,9 +1,5 @@
 package sales;
 
-import access.Attendees;
-import java.util.ArrayList;
-
-
 public class Entry {    
     private String name;
     private double price;    

@@ -2,39 +2,22 @@ package access;
 
 
 
-public class Access {
-    protected String event;
-    protected String registryAttendees;
+public class Access {    
+    protected String registeredAttendees;
     
     /*Contructor*/
     
-    public Access(String event, String registryAttendees) {
-        this.event = event;
-        this.registryAttendees = registryAttendees;
+    public Access(String registeredAttendees) {        
+        this.registeredAttendees = registeredAttendees;
     }
     
     /*Getters and Setters*/
 
-    public String getEvent() {
-        return event;
-    }
 
-    public void setEvent(String event) {
-        this.event = event;
-    }
-
-    public String getRegistryAttendees() {
-        return registryAttendees;
-    }
-
-    public void setRegistryAttendees(String registryAttendees) {
-        this.registryAttendees = registryAttendees;
-    }
-    
     /*Methods*/
     
     public void checkEntry(int attendeeId) {
-        System.out.println("Checking entry for attendee ID: " + attendeeId + " at event: " + event);
+        System.out.println("Checking entry for attendee ID: " + attendeeId + " at event: " );
     }    
 
     public void genStatistics(int totalAttendees) {
