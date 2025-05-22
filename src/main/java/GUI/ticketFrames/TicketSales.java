@@ -231,15 +231,15 @@ public class TicketSales extends javax.swing.JFrame {
 
     private void btnRegisterSaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterSaleActionPerformed
         try {
-            String dateTime = dateAge.getText() + "-" + dateMonth.getText() + "-" + dateDay.getText();
-            Sales newSales = new Sales();        
-            newSales.registerSale(Integer.parseInt(quantityTicket.getText()), dateTime, Double.parseDouble(ticketPrice.getText()));
+            String dateTime = dateAge.getText() + "-" + dateMonth.getText() + "-" + dateDay.getText();            
+            Sales newSales = new Sales(Integer.parseInt(quantityTicket.getText()), dateTime, Double.parseDouble(ticketPrice.getText()));
+            newSales.registerSale(newSales);           
             Attendees newAttendee = new Attendees();
             newAttendee.registry(idAttendee.getText(), nameAttendee.getText(), contactAttendee.getText(), newSales);
             JOptionPane.showMessageDialog(this, "Registered sale!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "[ERROR]" + e.getMessage(), "error", JOptionPane.ERROR_MESSAGE);
-        }                
+        }
     }//GEN-LAST:event_btnRegisterSaleActionPerformed
 
     /**

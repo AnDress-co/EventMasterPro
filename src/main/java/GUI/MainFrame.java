@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import GUI.accessFrames.*;
 import GUI.artistFrames.*;
 import GUI.ticketFrames.*;
 
@@ -44,6 +45,9 @@ public class MainFrame extends javax.swing.JFrame {
         showEntryTypes = new javax.swing.JMenuItem();
         ticketSales = new javax.swing.JMenuItem();
         accessControl = new javax.swing.JMenu();
+        showAttendees = new javax.swing.JMenuItem();
+        verifyEntry = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         financialManagement = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -132,6 +136,26 @@ public class MainFrame extends javax.swing.JFrame {
 
         accessControl.setForeground(new java.awt.Color(255, 255, 255));
         accessControl.setText("Access Control");
+
+        showAttendees.setText("See attendees");
+        showAttendees.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showAttendeesActionPerformed(evt);
+            }
+        });
+        accessControl.add(showAttendees);
+
+        verifyEntry.setText("Verify ticket");
+        verifyEntry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verifyEntryActionPerformed(evt);
+            }
+        });
+        accessControl.add(verifyEntry);
+
+        jMenuItem1.setText("Generate statistics");
+        accessControl.add(jMenuItem1);
+
         mainMenu.add(accessControl);
 
         financialManagement.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,7 +188,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(19, 19, 19))
         );
@@ -207,6 +231,18 @@ public class MainFrame extends javax.swing.JFrame {
         ticketsSales.setLocationRelativeTo(null);
         ticketsSales.setVisible(true);
     }//GEN-LAST:event_ticketSalesActionPerformed
+
+    private void showAttendeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAttendeesActionPerformed
+        ShowAttendees showAttendee = new ShowAttendees();
+        showAttendee.setLocationRelativeTo(null);
+        showAttendee.setVisible(true);
+    }//GEN-LAST:event_showAttendeesActionPerformed
+
+    private void verifyEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifyEntryActionPerformed
+        VerifyEntry verifyEntrys = new VerifyEntry();
+        verifyEntrys.setLocationRelativeTo(null);
+        verifyEntrys.setVisible(true);
+    }//GEN-LAST:event_verifyEntryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,13 +288,16 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu locationManagement;
     private javax.swing.JMenuBar mainMenu;
     private javax.swing.JMenu participantManagement;
     private javax.swing.JMenuItem registerArtist;
     private javax.swing.JMenuItem showArtists;
+    private javax.swing.JMenuItem showAttendees;
     private javax.swing.JMenuItem showEntryTypes;
     private javax.swing.JMenu ticketManagement;
     private javax.swing.JMenuItem ticketSales;
+    private javax.swing.JMenuItem verifyEntry;
     // End of variables declaration//GEN-END:variables
 }

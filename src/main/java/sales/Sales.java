@@ -1,8 +1,5 @@
 package sales;
 
-import java.util.ArrayList;
-
-
 public class Sales{
     private static int idCounter = 1;
     private int idSale;
@@ -60,23 +57,10 @@ public class Sales{
         
     /*Methods*/
     
-    public void registerSale(int quantitySold, String saleDate, double valueEntrySold) {
-        Sales newSale = new Sales(quantitySold, saleDate, valueEntrySold);
+    public void registerSale(Sales newSale) {        
         states.AppState.salesList.add(newSale);
-        System.out.println("Registered sale." + states.AppState.salesList);
+        System.out.println("Registered sale.");  
+        System.out.println(this.idSale);
     }
-    
-    public void salesList() {
-        if (states.AppState.salesList.isEmpty()) {
-            System.out.println("No sales have been redistered yet.");
-        } else {
-            System.out.println("List of Registered sales: ");
-            for (Sales sale: states.AppState.salesList) {
-                System.out.println("ID: " + sale.getIdSale() + 
-                        "\nQuantity: " + sale.getQuantitySold() + 
-                        "\nSale date: " + sale.getSaleDate() + 
-                        "\nPurchase value: " + (sale.getValueEntrySold()*sale.getQuantitySold())); 
-            }
-        }
-    }
+        
 }

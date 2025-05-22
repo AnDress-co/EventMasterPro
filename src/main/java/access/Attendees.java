@@ -1,6 +1,7 @@
 package access;
 
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 import sales.Sales;
 
 public class Attendees {    
@@ -61,11 +62,23 @@ public class Attendees {
     public void registry(String id, String name, String contact, Sales purchasedEntrys) {
         Attendees newAttendees = new Attendees(id, name, contact, purchasedEntrys);
         states.AppState.listAttendees.add(newAttendees);
-        System.out.println("Registering attendee!" + states.AppState.listAttendees);
+        System.out.println("Registering attendee!");
     }
 
-    public void showInfoAttendees() {
-        System.out.println("ID: " + id + " | Name: " + name + " | Contact: " + contact);
+    public void attendeeslistTable(DefaultTableModel model, ArrayList<Attendees> list) {
+        model.setRowCount(0);
+        for(Attendees attendee : list) {
+            if(attendee != null){
+                for(Sales sale : attendee.getPurchasedEntrys()){                    
+                    model.addRow(new Object[] {
+                        attendee.getId(),
+                        attendee.getName(),
+                        attendee.getContact(),
+                        sale.getIdSale()
+                    });
+                }                
+            }
+        }
     }
     
 }
