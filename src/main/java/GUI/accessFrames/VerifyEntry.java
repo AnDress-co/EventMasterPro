@@ -4,6 +4,9 @@
  */
 package GUI.accessFrames;
 
+import access.Access;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author soporte.agente2
@@ -15,6 +18,9 @@ public class VerifyEntry extends javax.swing.JFrame {
      */
     public VerifyEntry() {
         initComponents();
+        String[] columNames = {"ID", "Attedee", "Ticket type", "Quantity", "Total value"};
+        DefaultTableModel model = (DefaultTableModel) attendeeTable.getModel();
+        model.setColumnIdentifiers(columNames);
     }
 
     /**
@@ -27,6 +33,12 @@ public class VerifyEntry extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        idAttendee = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        attendeeTable = new javax.swing.JTable();
+        btnSearchAttendee = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 450));
@@ -36,25 +48,78 @@ public class VerifyEntry extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Check ticket");
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Purchase details");
+
+        jLabel3.setText("Attendee ID");
+
+        attendeeTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
+            }
+        ));
+        jScrollPane1.setViewportView(attendeeTable);
+
+        btnSearchAttendee.setBackground(new java.awt.Color(0, 153, 102));
+        btnSearchAttendee.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSearchAttendee.setForeground(new java.awt.Color(255, 255, 255));
+        btnSearchAttendee.setText("Search");
+        btnSearchAttendee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchAttendeeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addContainerGap(672, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(idAttendee, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnSearchAttendee))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 723, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(404, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idAttendee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearchAttendee))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSearchAttendeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchAttendeeActionPerformed
+        Access access = new Access();
+        DefaultTableModel model = (DefaultTableModel) attendeeTable.getModel();
+        access.checkEntry(model, this, idAttendee.getText(), states.AppState.listAttendees);
+    }//GEN-LAST:event_btnSearchAttendeeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,6 +157,12 @@ public class VerifyEntry extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable attendeeTable;
+    private javax.swing.JButton btnSearchAttendee;
+    private javax.swing.JTextField idAttendee;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

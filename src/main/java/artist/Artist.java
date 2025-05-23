@@ -1,9 +1,11 @@
 package artist;
 
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -96,11 +98,14 @@ public class Artist{
         System.out.println("Registering artist");                
     }
        
-    public void searchArtistToAddHistory(int id, JLabel artistNameJLabel, JList<String> listArtistJList) {
+    public void searchArtistToAddHistory(Component frameComponent,int id, JLabel artistNameJLabel, JList<String> listArtistJList) {
         for(Artist artist: states.AppState.listArtists) {
             if(artist.getId() == id) {
                 artistNameJLabel.setText(artist.getName());                
                 artist.updateArtistHistory(listArtistJList, artist.getArtistHistory());
+                JOptionPane.showMessageDialog(frameComponent, "Artist found!");                
+            } else {
+                JOptionPane.showMessageDialog(frameComponent, "Artist not found!");
                 break;
             }
         }        

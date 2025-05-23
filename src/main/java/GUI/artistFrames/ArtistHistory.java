@@ -181,8 +181,7 @@ public class ArtistHistory extends javax.swing.JFrame {
         try {
             Artist artist = new Artist();
             int id = Integer.parseInt(artistId.getText());
-            artist.searchArtistToAddHistory(id, artistName, artistListById);
-            JOptionPane.showMessageDialog(this, "Artist found!");
+            artist.searchArtistToAddHistory(this, id, artistName, artistListById);            
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "[ERROR] Please enter a number type value!");
         }        
