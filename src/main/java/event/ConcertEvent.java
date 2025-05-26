@@ -6,7 +6,6 @@ package event;
 
 import java.time.LocalDateTime;
 import location.Location;
-import artist.Artist;
 
 /**
  *
@@ -16,10 +15,7 @@ public class ConcertEvent extends Event {
     /*Constructors*/
     public ConcertEvent(String name, LocalDateTime date, Location location, String description) {
         super(name, date, location, description);
-    }
-
-    public ConcertEvent(String name, String eventType, String description) {
-        super(name, eventType, description);
+        this.typeEvent = "Concert";
     }
     
     /*Methods*/

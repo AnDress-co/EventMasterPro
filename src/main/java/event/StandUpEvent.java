@@ -4,7 +4,6 @@
  */
 package event;
 
-import artist.Artist;
 import java.time.LocalDateTime;
 import location.Location;
 
@@ -16,10 +15,7 @@ public class StandUpEvent extends Event {
 
     public StandUpEvent(String name, LocalDateTime date, Location location, String description) {
         super(name, date, location, description);
-    }
-
-    public StandUpEvent(String name, String eventType, String description) {
-        super(name, eventType, description);
+        this.typeEvent = "Stand Up";
     }
 
     @Override

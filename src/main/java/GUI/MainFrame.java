@@ -6,6 +6,8 @@ package GUI;
 
 import GUI.accessFrames.*;
 import GUI.artistFrames.*;
+import GUI.eventFrames.*;
+import GUI.locationsFrames.*;
 import GUI.ticketFrames.*;
 
 /**
@@ -35,7 +37,16 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         mainMenu = new javax.swing.JMenuBar();
         locationManagement = new javax.swing.JMenu();
+        createLocation = new javax.swing.JMenuItem();
+        addAvailableDateLoc = new javax.swing.JMenuItem();
+        listLocationsByDate = new javax.swing.JMenuItem();
+        listAllLocations = new javax.swing.JMenuItem();
         eventManagement = new javax.swing.JMenu();
+        createEvent = new javax.swing.JMenuItem();
+        modifyEvent = new javax.swing.JMenuItem();
+        listAllEvents = new javax.swing.JMenuItem();
+        listEventsCategory = new javax.swing.JMenuItem();
+        deleteEvent = new javax.swing.JMenuItem();
         participantManagement = new javax.swing.JMenu();
         registerArtist = new javax.swing.JMenuItem();
         showArtists = new javax.swing.JMenuItem();
@@ -66,14 +77,87 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel3.setText("Main Screen");
 
         mainMenu.setBackground(new java.awt.Color(0, 153, 102));
-        mainMenu.setForeground(new java.awt.Color(0, 0, 0));
 
         locationManagement.setForeground(new java.awt.Color(255, 255, 255));
         locationManagement.setText("Locations Management");
+
+        createLocation.setText("Create location");
+        createLocation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createLocationActionPerformed(evt);
+            }
+        });
+        locationManagement.add(createLocation);
+
+        addAvailableDateLoc.setText("Add available date to location");
+        addAvailableDateLoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addAvailableDateLocActionPerformed(evt);
+            }
+        });
+        locationManagement.add(addAvailableDateLoc);
+
+        listLocationsByDate.setText("List locations by available date");
+        listLocationsByDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listLocationsByDateActionPerformed(evt);
+            }
+        });
+        locationManagement.add(listLocationsByDate);
+
+        listAllLocations.setText("List all locations");
+        listAllLocations.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listAllLocationsActionPerformed(evt);
+            }
+        });
+        locationManagement.add(listAllLocations);
+
         mainMenu.add(locationManagement);
 
         eventManagement.setForeground(new java.awt.Color(255, 255, 255));
         eventManagement.setText("Events Management");
+
+        createEvent.setText("Create event");
+        createEvent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createEventActionPerformed(evt);
+            }
+        });
+        eventManagement.add(createEvent);
+
+        modifyEvent.setText("Modify event");
+        modifyEvent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyEventActionPerformed(evt);
+            }
+        });
+        eventManagement.add(modifyEvent);
+
+        listAllEvents.setText("List all events");
+        listAllEvents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listAllEventsActionPerformed(evt);
+            }
+        });
+        eventManagement.add(listAllEvents);
+
+        listEventsCategory.setText("List events by category");
+        listEventsCategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listEventsCategoryActionPerformed(evt);
+            }
+        });
+        eventManagement.add(listEventsCategory);
+
+        deleteEvent.setText("Delete event");
+        deleteEvent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteEventActionPerformed(evt);
+            }
+        });
+        eventManagement.add(deleteEvent);
+
         mainMenu.add(eventManagement);
 
         participantManagement.setForeground(new java.awt.Color(255, 255, 255));
@@ -244,6 +328,60 @@ public class MainFrame extends javax.swing.JFrame {
         verifyEntrys.setVisible(true);
     }//GEN-LAST:event_verifyEntryActionPerformed
 
+    private void createLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createLocationActionPerformed
+        CreateLocation createLocations = new CreateLocation();
+        createLocations.setLocationRelativeTo(null);
+        createLocations.setVisible(true);
+    }//GEN-LAST:event_createLocationActionPerformed
+
+    private void listAllLocationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listAllLocationsActionPerformed
+        ListAllLocations listAllLocation = new ListAllLocations();
+        listAllLocation.setLocationRelativeTo(null);
+        listAllLocation.setVisible(true);
+    }//GEN-LAST:event_listAllLocationsActionPerformed
+
+    private void addAvailableDateLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAvailableDateLocActionPerformed
+        AddAvailableDateLocation addAvailableDateLocation = new AddAvailableDateLocation();
+        addAvailableDateLocation.setLocationRelativeTo(null);
+        addAvailableDateLocation.setVisible(true);
+    }//GEN-LAST:event_addAvailableDateLocActionPerformed
+
+    private void listLocationsByDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listLocationsByDateActionPerformed
+        ListLocationsByAvailableDate listLocationsByAvailableDate = new ListLocationsByAvailableDate();
+        listLocationsByAvailableDate.setLocationRelativeTo(null);
+        listLocationsByAvailableDate.setVisible(true);
+    }//GEN-LAST:event_listLocationsByDateActionPerformed
+
+    private void createEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createEventActionPerformed
+        CreateEvent createEvents = new CreateEvent();
+        createEvents.setLocationRelativeTo(null);
+        createEvents.setVisible(true);
+    }//GEN-LAST:event_createEventActionPerformed
+
+    private void listAllEventsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listAllEventsActionPerformed
+        ListAllEvents listEvents = new ListAllEvents();
+        listEvents.setLocationRelativeTo(null);
+        listEvents.setVisible(true);
+    }//GEN-LAST:event_listAllEventsActionPerformed
+
+    private void listEventsCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listEventsCategoryActionPerformed
+        ListEventsByCategory listEventsByCategory = new ListEventsByCategory();
+        listEventsByCategory.setLocationRelativeTo(null);
+        listEventsByCategory.setVisible(true);
+    }//GEN-LAST:event_listEventsCategoryActionPerformed
+
+    private void deleteEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEventActionPerformed
+        DeleteEvent deleteEvents = new DeleteEvent();
+        deleteEvents.setLocationRelativeTo(null);
+        deleteEvents.setVisible(true);
+    }//GEN-LAST:event_deleteEventActionPerformed
+
+    private void modifyEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyEventActionPerformed
+        ModifyEvent modifyEvents = new ModifyEvent();
+        modifyEvents.setLocationRelativeTo(null);
+        modifyEvents.setVisible(true);
+    }//GEN-LAST:event_modifyEventActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -281,16 +419,25 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu accessControl;
+    private javax.swing.JMenuItem addAvailableDateLoc;
     private javax.swing.JMenuItem artistHistory;
     private javax.swing.JMenuItem createEntry;
+    private javax.swing.JMenuItem createEvent;
+    private javax.swing.JMenuItem createLocation;
+    private javax.swing.JMenuItem deleteEvent;
     private javax.swing.JMenu eventManagement;
     private javax.swing.JMenu financialManagement;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem listAllEvents;
+    private javax.swing.JMenuItem listAllLocations;
+    private javax.swing.JMenuItem listEventsCategory;
+    private javax.swing.JMenuItem listLocationsByDate;
     private javax.swing.JMenu locationManagement;
     private javax.swing.JMenuBar mainMenu;
+    private javax.swing.JMenuItem modifyEvent;
     private javax.swing.JMenu participantManagement;
     private javax.swing.JMenuItem registerArtist;
     private javax.swing.JMenuItem showArtists;

@@ -4,27 +4,30 @@ import java.time.*;
 import java.util.HashSet;
 
 public class Location {
-    private int idLocation;
+    private int idLocation = 0;
     private String name;
     private String address;
     private int capacity;
     private String technicalSpecifications;
     private HashSet<LocalDate> availableDates;
+    
+    private static int idCounter = 1;
 
     // Constructor
-    public Location(int idLocation, String name, String address, int capacity, String technicalSpecifications) {
-        this.idLocation = idLocation;
+    public Location(String name, String address, int capacity, String technicalSpecifications, LocalDate availableDate) {
+        this.idLocation = idCounter++;
         this.name = name;
         this.address = address;
         this.capacity = capacity;
         this.technicalSpecifications = technicalSpecifications;
-        this.availableDates = new HashSet<>();
+        //Register initial available date
+        this.availableDates = new HashSet();
+        addAvailableDate(availableDate);
     }
 
     // Métodos
     public void addAvailableDate(LocalDate date) {
         this.availableDates.add(date);
-        System.out.println("The date " + date + " was added successfully!");
     }
     
     public void validateAvailableDate(LocalDate date) { 

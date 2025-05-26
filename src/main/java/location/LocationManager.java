@@ -6,6 +6,8 @@ package location;
 
 import java.time.*;
 import java.util.*;
+import javax.swing.JComboBox;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -41,12 +43,52 @@ public class LocationManager {
         for (LocalDate d: location.getAvailableDates()){
             if (d.equals(date)) {
                 location.getAvailableDates().remove(d); 
-                System.out.println("The date " + date + " was removed from available dates for the " + location.getName() + " location.");
             }
         }      
     }
     
     public List<Location> getLocations() {
         return locations;
+    }
+    
+    public void locationsListTable(DefaultTableModel model) {  
+        model.setRowCount(0);
+        for(Location location : this.locations) {
+            if(location != null) {                
+                model.addRow(new Object[] {
+                    location.getId(),
+                    location.getName(),
+                    location.getAddress(),
+                    location.getCapacity(),
+                    location.getTechnicalSpecifications(),
+                    location.getAvailableDates()
+                });
+            }            
+        }
+    }
+    
+    public void locationsFilteredListTable(DefaultTableModel model, List<Location> locations) {  
+        model.setRowCount(0);
+        for(Location location : locations) {
+            if(location != null) {                
+                model.addRow(new Object[] {
+                    location.getId(),
+                    location.getName(),
+                    location.getAddress(),
+                    location.getCapacity(),
+                    location.getTechnicalSpecifications(),
+                    location.getAvailableDates()
+                });
+            }            
+        }
+    }
+    
+    public void locationListBox(JComboBox<String> eventLocationSelect) {
+        eventLocationSelect.removeAllItems();
+        String showLocation;
+        for (Location location : this.locations) {
+            showLocation = location.getId() + " - " + location.getName();
+            eventLocationSelect.addItem(showLocation);
+        }
     }
 }

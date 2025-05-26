@@ -24,7 +24,7 @@ public class ArtistHistory extends javax.swing.JFrame {
         initComponents();
         
         //Ejemplo mientras se crea un evento en la lista.
-        Event event = new Event("Bad Bunny Fest", "Concierto", "Se dara un conciertod e bad bunny en Medellin.") {
+        /*Event event = new Event("Bad Bunny Fest", "Concierto", "Se dara un conciertod e bad bunny en Medellin.") {
             @Override
             public void showDetails() {
                 //
@@ -36,10 +36,10 @@ public class ArtistHistory extends javax.swing.JFrame {
             public void showDetails() {
                 //
             }
-        };
+        };*/
         List<Event> events = new ArrayList<>();
-        events.add(event);
-        events.add(event1);
+        /*events.add(event);
+        events.add(event1);*/
         EventManager eventManager = new EventManager(events);                
         eventManager.eventListBox(artistHistorySelection);
     }

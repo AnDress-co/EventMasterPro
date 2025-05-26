@@ -2,28 +2,33 @@ package event;
 
 import java.time.*;
 import location.Location;
-import artist.Artist;
 
 public abstract class Event {
-    private int idEvent = 0;
+    private int idEvent;
     private String name;
     private LocalDateTime date;
     private Location location;
     private String description;
+    protected String typeEvent;
+    
+    private static int idCounter = 1;
     
     /*Constructors*/
     public Event(String name, LocalDateTime date, Location location, String description) {
-        this.idEvent += 1;
+        this.idEvent = idCounter++;
         this.name = name;
         this.date = date;
         this.location = location;
         this.description = description;
     }
     
-    public Event(String name, String eventType, String description) {
-        this.idEvent += 1;
+    public Event(String name, LocalDateTime date, Location location, String description, String typeEvent) {
+        this.idEvent = idCounter++;
         this.name = name;
+        this.date = date;
+        this.location = location;
         this.description = description;
+        this.typeEvent = typeEvent;
     }
     
     /*Getters and Setters*/
@@ -63,10 +68,17 @@ public abstract class Event {
         this.description = description;
     }
     
+    public String getTypeEvent() {
+        return typeEvent;
+    }
+    
+    public void setTypeEvent(String typeEvent) {
+        this.typeEvent = typeEvent;
+    }
+    
     /*Methods*/
     public void assignDate (LocalDateTime date) {
         this.date = date;
-        System.out.println("The date " + date + " was added to the " + this.name + " event!");
     }
     
     public abstract void showDetails();
