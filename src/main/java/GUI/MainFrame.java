@@ -8,6 +8,7 @@ import GUI.accessFrames.*;
 import GUI.artistFrames.*;
 import GUI.eventFrames.*;
 import GUI.locationsFrames.*;
+import GUI.financeFrames.*;
 import GUI.ticketFrames.*;
 
 /**
@@ -58,8 +59,11 @@ public class MainFrame extends javax.swing.JFrame {
         accessControl = new javax.swing.JMenu();
         showAttendees = new javax.swing.JMenuItem();
         verifyEntry = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        entryStatistic = new javax.swing.JMenuItem();
         financialManagement = new javax.swing.JMenu();
+        registerEventBudget = new javax.swing.JMenuItem();
+        registerExpenses = new javax.swing.JMenuItem();
+        financeManagement = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EventMaster Pro");
@@ -237,13 +241,48 @@ public class MainFrame extends javax.swing.JFrame {
         });
         accessControl.add(verifyEntry);
 
-        jMenuItem1.setText("Generate statistics");
-        accessControl.add(jMenuItem1);
+        entryStatistic.setText("Generate statistics");
+        entryStatistic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entryStatisticActionPerformed(evt);
+            }
+        });
+        accessControl.add(entryStatistic);
 
         mainMenu.add(accessControl);
 
         financialManagement.setForeground(new java.awt.Color(255, 255, 255));
         financialManagement.setText("Financial Management");
+        financialManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                financialManagementActionPerformed(evt);
+            }
+        });
+
+        registerEventBudget.setText("Register Event Budget");
+        registerEventBudget.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerEventBudgetActionPerformed(evt);
+            }
+        });
+        financialManagement.add(registerEventBudget);
+
+        registerExpenses.setText("Register Expenses");
+        registerExpenses.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerExpensesActionPerformed(evt);
+            }
+        });
+        financialManagement.add(registerExpenses);
+
+        financeManagement.setText("Finance management");
+        financeManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                financeManagementActionPerformed(evt);
+            }
+        });
+        financialManagement.add(financeManagement);
+
         mainMenu.add(financialManagement);
 
         setJMenuBar(mainMenu);
@@ -382,6 +421,34 @@ public class MainFrame extends javax.swing.JFrame {
         modifyEvents.setVisible(true);
     }//GEN-LAST:event_modifyEventActionPerformed
     
+    private void entryStatisticActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entryStatisticActionPerformed
+        EntryStatistics entryStatistics = new EntryStatistics();
+        entryStatistics.setLocationRelativeTo(null);
+        entryStatistics.setVisible(true);
+    }//GEN-LAST:event_entryStatisticActionPerformed
+
+    private void financialManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_financialManagementActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_financialManagementActionPerformed
+
+    private void registerEventBudgetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerEventBudgetActionPerformed
+        RegisterEventBudget addEventBudget = new RegisterEventBudget();
+        addEventBudget.setLocationRelativeTo(null);
+        addEventBudget.setVisible(true);
+    }//GEN-LAST:event_registerEventBudgetActionPerformed
+
+    private void financeManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_financeManagementActionPerformed
+        FinanceManagement financeManagemen = new FinanceManagement();
+        financeManagemen.setLocationRelativeTo(null);
+        financeManagemen.setVisible(true);
+    }//GEN-LAST:event_financeManagementActionPerformed
+
+    private void registerExpensesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerExpensesActionPerformed
+        registerExpenses registerExpense = new registerExpenses();
+        registerExpense.setLocationRelativeTo(null);
+        registerExpense.setVisible(true);
+    }//GEN-LAST:event_registerExpensesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -425,12 +492,13 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem createEvent;
     private javax.swing.JMenuItem createLocation;
     private javax.swing.JMenuItem deleteEvent;
+    private javax.swing.JMenuItem entryStatistic;
     private javax.swing.JMenu eventManagement;
+    private javax.swing.JMenuItem financeManagement;
     private javax.swing.JMenu financialManagement;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem listAllEvents;
     private javax.swing.JMenuItem listAllLocations;
     private javax.swing.JMenuItem listEventsCategory;
@@ -440,6 +508,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem modifyEvent;
     private javax.swing.JMenu participantManagement;
     private javax.swing.JMenuItem registerArtist;
+    private javax.swing.JMenuItem registerEventBudget;
+    private javax.swing.JMenuItem registerExpenses;
     private javax.swing.JMenuItem showArtists;
     private javax.swing.JMenuItem showAttendees;
     private javax.swing.JMenuItem showEntryTypes;

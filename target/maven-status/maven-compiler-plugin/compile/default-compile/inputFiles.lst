@@ -10,6 +10,7 @@ C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\s
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\artist\TypeArtist.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\locationsFrames\ListAllLocations.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\access\Attendees.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\financeFrames\RegisterEventBudget.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\event\ConcertEvent.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\finance\Finance.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\com\mycompany\eventmasterpro\Main.java
@@ -18,7 +19,9 @@ C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\s
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\event\Event.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\locationsFrames\ListLocationsByAvailableDate.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\eventFrames\ListAllEvents.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\financeFrames\registerExpenses.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\ticketFrames\TicketSales.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\accessFrames\EntryStatistics.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\eventFrames\ModifyEvent.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\sales\TypeEntry.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\ticketFrames\CreateEntryType.java
@@ -33,3 +36,4 @@ C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\s
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\location\LocationManager.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\eventFrames\DeleteEvent.java
 C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\artist\Artist.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\financeFrames\FinanceManagement.java

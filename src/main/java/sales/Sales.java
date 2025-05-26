@@ -6,6 +6,7 @@ public class Sales{
     private int quantitySold;
     private String saleDate;
     private double valueEntrySold;
+    private String nameEntrySold;
         
     
     /*Contructor*/
@@ -14,11 +15,12 @@ public class Sales{
         
     }
 
-    public Sales(int quantitySold, String saleDate, double valueEntrySold) {
+    public Sales(int quantitySold, String saleDate, double valueEntrySold, String nameEntrySold) {
         this.idSale = idCounter++;
         this.quantitySold = quantitySold;
         this.saleDate = saleDate;
-        this.valueEntrySold = valueEntrySold;                
+        this.valueEntrySold = valueEntrySold;
+        this.nameEntrySold = nameEntrySold;
     }
     
     /*Getters and Setters*/
@@ -53,14 +55,21 @@ public class Sales{
 
     public void setEntrySale(double valueEntrySold) {
         this.valueEntrySold = valueEntrySold;
-    }                
+    }  
+
+    public String getNameEntrySold() {
+        return nameEntrySold;
+    }
+
+    public void setNameEntrySold(String nameEntrySold) {
+        this.nameEntrySold = nameEntrySold;
+    }        
         
     /*Methods*/
     
     public void registerSale(Sales newSale) {        
         states.AppState.salesList.add(newSale);
-        System.out.println("Registered sale.");  
-        System.out.println(this.idSale);
+        System.out.println("Registered sale.");          
     }
         
 }

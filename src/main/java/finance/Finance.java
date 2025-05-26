@@ -1,16 +1,13 @@
 package finance;
 
 import java.util.ArrayList;
-
-
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableModel;
+import sales.Sales;
 
 public class Finance {
-    private double eventBudget;
-    private double income;
-    private double expenses;
-    
-    private static ArrayList<Double> listIncome = new ArrayList<>();
-    private static ArrayList<Double> listExpenses = new ArrayList<>();
+    private double eventBudget;    
+    private double expenses;            
     
     /*Contructor*/
     
@@ -18,8 +15,7 @@ public class Finance {
         
     }
     
-    public Finance(double income, double expenses, double eventBudget) {
-        this.income = income;
+    public Finance(double expenses, double eventBudget) {
         this.expenses = expenses;
         this.eventBudget = eventBudget;
     }
@@ -34,14 +30,6 @@ public class Finance {
         this.eventBudget = eventBudget;
     }
 
-    public double getIncome() {
-        return income;
-    }
-
-    public void setIncome(double income) {
-        this.income = income;
-    }
-
     public double getExpenses() {
         return expenses;
     }
@@ -50,37 +38,50 @@ public class Finance {
         this.expenses = expenses;
     }
     
-    /*Methods*/               
-    
-    public void incomeHistory() {
-        if(listIncome.isEmpty()) {
-            System.out.println("Empty income list.");
-        } else {
-            System.out.println("Income list: ");
-            for (double oneIncome : listIncome) {
-                System.out.println(oneIncome);
-            }
-        }
-    }
-    
-    public void registerIncome() {
-        listIncome.add(this.income);
-        System.out.println("Registered income.");
-    }
+    /*Methods*/  
     
     public void expensesHistory() {
-        if(listExpenses.isEmpty()) {
+        if(states.AppState.listExpenses.isEmpty()) {
             System.out.println("Empty expenses list.");
         } else {
             System.out.println("Expenses list: ");
-            for (double oneExpenses : listExpenses) {
+            for (double oneExpenses : states.AppState.listExpenses) {
                 System.out.println(oneExpenses);
             }
         }
     }
     
     public void registerExpenses() {        
-        listExpenses.add(this.expenses);
+        states.AppState.listExpenses.add(getExpenses());
         System.out.println("Registered expenses.");
+    }
+    
+    public void registerBudget() {
+        states.AppState.eventBudget = getEventBudget();
+        System.out.println("Registered Budget.");
+    }    
+    
+    public void listTableIncome(DefaultTableModel model, JLabel labelTotal, ArrayList<Sales> list) {
+        model.setRowCount(0);
+        double incomeTotal = 0.0;
+        for(Sales sale : list) {            
+            incomeTotal = incomeTotal + (sale.getValueEntrySold()*sale.getQuantitySold());
+            model.addRow(new Object[] {
+                sale.getValueEntrySold()*sale.getQuantitySold()
+            });
+        }
+        labelTotal.setText(Double.toString(incomeTotal));
+    }
+    
+    public void listTableExpenses(DefaultTableModel model, JLabel labelTotal, ArrayList<Double> list) {
+        model.setRowCount(0);
+        double expenseTotal = 0.0;
+        for(Double expense : list) {            
+            expenseTotal = expenseTotal + expense;
+            model.addRow(new Object[] {
+                expense
+            });
+        }
+        labelTotal.setText(Double.toString(expenseTotal));
     }
 }

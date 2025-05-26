@@ -1,6 +1,7 @@
 GUI\ticketFrames\TicketSales$3.class
 GUI\MainFrame$7.class
 GUI\ticketFrames\ShowEntryType$1.class
+GUI\financeFrames\FinanceManagement$1.class
 GUI\accessFrames\VerifyEntry.class
 location\LocationManager.class
 GUI\accessFrames\ShowAttendees.class
@@ -9,6 +10,7 @@ GUI\eventFrames\CreateEvent$1.class
 GUI\ticketFrames\CreateEntryType.class
 com\mycompany\eventmasterpro\Main.class
 event\StandUpEvent.class
+GUI\accessFrames\EntryStatistics$1.class
 GUI\artistFrames\ArtistHistory.class
 GUI\locationsFrames\ListLocationsByAvailableDate$2.class
 GUI\MainFrame$11.class
@@ -23,13 +25,16 @@ access\Attendees.class
 GUI\MainFrame$12.class
 GUI\ticketFrames\TicketSales.class
 GUI\MainFrame$5.class
+GUI\financeFrames\RegisterEventBudget$2.class
 event\EventManager.class
 GUI\locationsFrames\CreateLocation$3.class
+GUI\financeFrames\registerExpenses$1.class
 GUI\locationsFrames\AddAvailableDateLocation$3.class
 GUI\MainFrame$13.class
 GUI\locationsFrames\ListAllLocations.class
 GUI\ticketFrames\CreateEntryType$2.class
 GUI\ticketFrames\TicketSales$4.class
+GUI\financeFrames\FinanceManagement.class
 GUI\ticketFrames\ShowEntryType.class
 GUI\artistFrames\ArtistRegistration$1.class
 artist\TypeArtist.class
@@ -38,10 +43,13 @@ GUI\MainFrame$4.class
 GUI\eventFrames\ModifyEvent$4.class
 GUI\locationsFrames\AddAvailableDateLocation$4.class
 finance\Finance.class
+GUI\financeFrames\registerExpenses$2.class
 GUI\locationsFrames\AddAvailableDateLocation$2.class
 GUI\eventFrames\ModifyEvent.class
+GUI\accessFrames\VerifyEntry$2.class
 GUI\locationsFrames\ListLocationsByAvailableDate$1.class
 GUI\locationsFrames\CreateLocation$1.class
+GUI\accessFrames\EntryStatistics.class
 GUI\artistFrames\ArtistRegistration$2.class
 location\Location.class
 GUI\ticketFrames\CreateEntryType$1.class
@@ -54,6 +62,7 @@ GUI\MainFrame$18.class
 GUI\MainFrame$6.class
 GUI\ticketFrames\TicketSales$2.class
 GUI\accessFrames\ShowAttendees$1.class
+GUI\financeFrames\RegisterEventBudget$1.class
 GUI\MainFrame$3.class
 event\ConcertEvent.class
 GUI\MainFrame$9.class
@@ -67,6 +76,7 @@ event\ConferenceEvent.class
 GUI\eventFrames\DeleteEvent$3.class
 artist\Artist.class
 GUI\eventFrames\ModifyEvent$2.class
+GUI\financeFrames\RegisterEventBudget.class
 sales\Entry.class
 event\Event.class
 GUI\ticketFrames\TicketSales$1.class
@@ -78,6 +88,7 @@ GUI\eventFrames\CreateEvent.class
 GUI\locationsFrames\ListAllLocations$1.class
 GUI\MainFrame$15.class
 GUI\eventFrames\ListAllEvents$1.class
+GUI\financeFrames\registerExpenses.class
 GUI\MainFrame$2.class
 GUI\accessFrames\VerifyEntry$1.class
 GUI\eventFrames\ModifyEvent$1.class

@@ -15,4 +15,6 @@ public class AppState {
     public static HashMap<String, Double> typeEntry = new HashMap<>();
     public static ArrayList<Location> locationsList = new ArrayList<>();
     public static ArrayList<Event> eventList = new ArrayList<>();
+    public static ArrayList<Double> listExpenses = new ArrayList<>();
+    public static double eventBudget;
 }
