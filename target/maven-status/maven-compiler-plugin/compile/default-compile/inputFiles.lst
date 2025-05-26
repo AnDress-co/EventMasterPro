@@ -1,35 +1,35 @@
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\access\Access.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\access\Attendees.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\artist\Artist.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\artist\TypeArtist.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\com\mycompany\eventmasterpro\Main.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\event\ConcertEvent.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\event\ConferenceEvent.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\event\Event.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\event\EventManager.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\event\StandUpEvent.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\finance\Finance.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\accessFrames\ShowAttendees.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\accessFrames\VerifyEntry.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\artistFrames\ArtistHistory.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\artistFrames\ArtistRegistration.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\artistFrames\ShowAllArtist.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\eventFrames\CreateEvent.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\eventFrames\DeleteEvent.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\eventFrames\ListAllEvents.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\eventFrames\ListEventsByCategory.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\eventFrames\ModifyEvent.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\locationsFrames\AddAvailableDateLocation.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\locationsFrames\CreateLocation.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\locationsFrames\ListAllLocations.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\locationsFrames\ListLocationsByAvailableDate.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\MainFrame.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\ticketFrames\CreateEntryType.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\ticketFrames\ShowEntryType.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\GUI\ticketFrames\TicketSales.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\location\Location.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\location\LocationManager.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\sales\Entry.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\sales\Sales.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\sales\TypeEntry.java
-C:\Users\stive\OneDrive\Documentos\Tareas - Semestre II\Construccion de Software\EventMasterPro\src\main\java\states\AppState.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\locationsFrames\CreateLocation.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\artistFrames\ShowAllArtist.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\event\StandUpEvent.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\access\Access.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\sales\Sales.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\ticketFrames\ShowEntryType.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\location\Location.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\event\ConferenceEvent.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\event\EventManager.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\artist\TypeArtist.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\locationsFrames\ListAllLocations.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\access\Attendees.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\event\ConcertEvent.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\finance\Finance.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\com\mycompany\eventmasterpro\Main.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\MainFrame.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\states\AppState.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\event\Event.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\locationsFrames\ListLocationsByAvailableDate.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\eventFrames\ListAllEvents.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\ticketFrames\TicketSales.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\eventFrames\ModifyEvent.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\sales\TypeEntry.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\ticketFrames\CreateEntryType.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\accessFrames\ShowAttendees.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\eventFrames\ListEventsByCategory.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\artistFrames\ArtistHistory.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\eventFrames\CreateEvent.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\artistFrames\ArtistRegistration.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\sales\Entry.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\accessFrames\VerifyEntry.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\locationsFrames\AddAvailableDateLocation.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\location\LocationManager.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\GUI\eventFrames\DeleteEvent.java
+C:\Users\soporte.agente2\Documentos\ContruccionSoftwareProyecto\EventMasterPro\src\main\java\artist\Artist.java
