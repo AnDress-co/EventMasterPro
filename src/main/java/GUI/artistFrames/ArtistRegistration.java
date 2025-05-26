@@ -2,8 +2,6 @@ package GUI.artistFrames;
 
 import artist.*;
 import event.*;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JOptionPane;
 
 public class ArtistRegistration extends javax.swing.JFrame {
@@ -15,25 +13,8 @@ public class ArtistRegistration extends javax.swing.JFrame {
         initComponents();
         TypeArtist typeArtist = new TypeArtist();
         typeArtist.categoryListBox(typeArtistSelection);
-        
-        //Ejemplo mientras se crea un evento en la lista.
-        /*Event event = new Event("Bad Bunny Fest", "Concierto", "Se dara un conciertod e bad bunny en Medellin.") {
-            @Override
-            public void showDetails() {
-                //
-            }
-        };
-        
-        Event event1 = new Event("Trinidad Blue", "Concierto", "Concierto den Macarena Blue.") {
-            @Override
-            public void showDetails() {
-                //
-            }
-        };*/
-        List<Event> events = new ArrayList<>();
-        /*events.add(event);
-        events.add(event1);*/
-        EventManager eventManager = new EventManager(events);                
+                
+        EventManager eventManager = new EventManager(states.AppState.eventList);                
         eventManager.eventListBox(artistHistorySelection);
     }
 

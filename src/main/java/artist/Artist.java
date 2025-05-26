@@ -103,9 +103,7 @@ public class Artist{
             if(artist.getId() == id) {
                 artistNameJLabel.setText(artist.getName());                
                 artist.updateArtistHistory(listArtistJList, artist.getArtistHistory());
-                JOptionPane.showMessageDialog(frameComponent, "Artist found!");                
-            } else {
-                JOptionPane.showMessageDialog(frameComponent, "Artist not found!");
+                JOptionPane.showMessageDialog(frameComponent, "Artist found!");
                 break;
             }
         }        

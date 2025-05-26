@@ -39,7 +39,6 @@ public class EntryStatistics extends javax.swing.JFrame {
         valueSales = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(350, 180));
         setResizable(false);
         setSize(new java.awt.Dimension(350, 180));
 
@@ -48,7 +47,7 @@ public class EntryStatistics extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 102));
-        jLabel2.setText("Number of attendees:");
+        jLabel2.setText("Purchases made:");
 
         numAttendees.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         numAttendees.setText("***************");
